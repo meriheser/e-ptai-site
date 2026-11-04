@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>E-PtAi – тренировки, питание и ИИ-тренер в одном приложении</title>
-<meta name="description" content="E-PtAi объединяет 333 видео упражнений, занятия за экраном, личный план, питание и ИИ-тренера в одном приложении. Скоро в App Store и Google Play.">
+<meta name="description" content="E-PtAi объединяет 1000 видео упражнений, занятия за экраном, личный план, питание и ИИ-тренера в одном приложении. Скоро в App Store и Google Play.">
 <meta name="theme-color" content="#040A0C">
 <link rel="canonical" href="https://www.e-ptai.com/ru/">
 <link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://www.e-ptai.com/ru/">
 <meta property="og:title" content="E-PtAi – тренировки, питание и ИИ-тренер в одном приложении">
-<meta property="og:description" content="E-PtAi объединяет 333 видео упражнений, занятия за экраном, личный план, питание и ИИ-тренера в одном приложении. Скоро в App Store и Google Play.">
+<meta property="og:description" content="E-PtAi объединяет 1000 видео упражнений, занятия за экраном, личный план, питание и ИИ-тренера в одном приложении. Скоро в App Store и Google Play.">
 <meta property="og:image" content="https://www.e-ptai.com/assets/img/og-ru.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -26,6 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/img/icon-64.png" type="image/png">
 <link rel="preload" href="/assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/video/ai-lesson-demo.webp" as="image">
 <link rel="stylesheet" href="/assets/site.css">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('e-theme')==='logo')document.documentElement.dataset.theme='logo'}catch(e){}try{if(sessionStorage.getItem('e-intro'))document.documentElement.classList.add('no-intro');else sessionStorage.setItem('e-intro','1')}catch(e){}</script>
 <script defer src="/assets/site.js" onerror="document.documentElement.classList.remove('js')"></script>
@@ -55,27 +56,30 @@
       <div class="light" aria-hidden="true"></div>
       <div class="pedestal" aria-hidden="true"></div>
       <div class="ring">
-        <figure class="ph" data-i="0"><div class="bob"><div class="phone "><img src="/assets/img/ru/dashboard.webp" alt="Главный экран E-PtAi: карточка ИИ-тренера, целевой вес, ежедневный учёт и план питания" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
-        <figure class="ph" data-i="1"><div class="bob"><div class="phone "><img src="/assets/img/ru/workout.webp" alt="Экран тренировки E-PtAi: упражнения на сегодня и кнопка запуска" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
-        <figure class="ph" data-i="2"><div class="bob"><div class="phone "><img src="/assets/img/ru/class-run.webp" alt="Экран занятия E-PtAi: полноэкранное видео упражнения и обратный отсчёт" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
+        <figure class="ph vid" data-i="0"><div class="bob"><div class="phone"><video data-lesson muted playsinline preload="none" poster="/assets/video/ai-lesson-demo.webp" width="720" height="1280" aria-label="ИИ-занятие один на один"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div></div></figure>
+        <figure class="ph" data-i="0"><div class="bob"><div class="phone "><img src="/assets/img/ru/dashboard.webp" alt="Главный экран E-PtAi: карточка ИИ-тренера, целевой вес, ежедневный учёт и план питания" width="560" height="1195" decoding="sync"></div></div></figure>
+        <figure class="ph" data-i="1"><div class="bob"><div class="phone "><img src="/assets/img/ru/workout.webp" alt="Экран тренировки E-PtAi: упражнения на сегодня и кнопка запуска" width="560" height="1195" decoding="sync"></div></div></figure>
+        <figure class="ph" data-i="2"><div class="bob"><div class="phone "><img src="/assets/img/ru/class-run.webp" alt="Экран занятия E-PtAi: полноэкранное видео упражнения и обратный отсчёт" width="560" height="1195" decoding="sync"></div></div></figure>
         <figure class="ph" data-i="3"><div class="bob"><div class="phone "><img src="/assets/img/ru/ranks.webp" alt="Экран индекса силы E-PtAi: ранг Гранит и щиты всех десяти рангов" width="560" height="1195" loading="lazy" decoding="sync"></div></div></figure>
         <figure class="ph" data-i="4"><div class="bob"><div class="phone "><img src="/assets/img/ru/plan.webp" alt="Экран «Твой план готов» в E-PtAi: график цели, программа и калории на день" width="560" height="1195" loading="lazy" decoding="sync"></div></div></figure>
       </div>
+      <p class="welcome-cap" hidden>Добро пожаловать в E-PtAi. Это будет твой цифровой персональный тренер. Это приложение изменит твою жизнь. Скачай его для нового себя.</p>
+      <div class="hero-vctl"><div class="vctl" role="group"><button type="button" class="v-play" aria-label="Воспроизвести" data-play="Воспроизвести" data-pause="Пауза"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Включить звук" data-on="Включить звук" data-off="Выключить звук"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">Включить звук</span></button></div></div>
       <button class="arrow prev" type="button" aria-label="Предыдущий экран"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
       <button class="arrow next" type="button" aria-label="Следующий экран"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
     <div class="ctl-row">
-      <p class="cap" aria-live="polite">Главная</p>
+      <p class="cap" aria-live="polite">ИИ-занятие один на один · Скоро</p>
       <div class="track" aria-hidden="true"><span></span></div>
       <button class="auto" type="button" aria-label="Остановить автопрокрутку" data-pause="Остановить автопрокрутку" data-play="Запустить автопрокрутку"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-pause" d="M8 5v14M16 5v14"/><path class="ic-play" d="M8 5l11 7-11 7z"/></svg></button>
     </div>
-    <template id="caps"><i>Главная</i><i>Тренировка</i><i>Занятие за экраном</i><i>Индекс силы</i><i>Твой план готов</i></template>
+    <template id="caps"><i>ИИ-занятие один на один · Скоро</i><i>Главная</i><i>Тренировка</i><i>Занятие за экраном</i><i>Индекс силы</i><i>Твой план готов</i></template>
   </div>
 </section>
 
 <section class="sec lib" id="hareketler">
   <div class="lib-text">
-    <h2 class="rv">333 видео упражнений</h2>
+    <h2 class="rv">1000 видео упражнений</h2>
     <p class="say rv">Смотри упражнение и повторяй вместе с видео.</p>
     <div class="tabs rv" role="group" aria-label="Выбери направление"><button type="button" data-tab="0" aria-pressed="true">Фитнес</button><button type="button" data-tab="1" aria-pressed="false">Йога</button><button type="button" data-tab="2" aria-pressed="false">Пилатес</button><button type="button" data-tab="3" aria-pressed="false">Дома</button></div>
     <ul class="feats rv"><li>Поиск по мышцам</li><li>Полноэкранный плеер</li><li>Голосовой тренер</li><li>Счётчик повторений</li></ul>
@@ -178,26 +182,10 @@
   <div class="pair rv"><div class="phone tilt-a"><img src="/assets/img/ru/share.webp" alt="Карточка для сторис E-PtAi с примером итогов тренировки" width="560" height="1195" loading="lazy" decoding="async"></div><div class="phone tilt-b"><img src="/assets/img/ru/friends.webp" alt="Экран друзей E-PtAi: код приглашения и дуэль недели, с примерами имён" width="560" height="1195" loading="lazy" decoding="async"></div></div>
 </section>
 
-<section class="sec ai" id="ai-koc">
-  <div class="duo-head"><div class="tabs rv" role="group" data-seg><button type="button" data-pane="0" aria-pressed="true">ИИ-тренер</button><button type="button" data-pane="1" aria-pressed="false">Студия ИИ-занятий</button><button type="button" data-pane="2" aria-pressed="false">ИИ-занятие один на один</button></div></div>
-  <div class="duo-body"><div class="pane ai-grid" data-pane="0"><div class="glass price rv">
-    <h2>ИИ-тренер</h2>
-    <p class="amount"><span dir="ltr">₺99,99</span><small>/мес</small></p>
-    <p class="amount-y"><span class="or">или</span> <span dir="ltr">₺719,99</span><small>/год</small></p>
-    <p class="say">Одна подписка. Без пробного периода. Начни бесплатно, двигайся и следи за прогрессом!</p>
-    <ul class="ticks"><li>Общие ответы о тренировках и питании</li><li>План пересобирается каждую неделю</li><li>Без рекламы для подписчиков</li></ul>
-    <ul class="feats"><li>Анимированный робот-тренер</li><li>Женский и мужской вид</li><li>11 цветовых тем</li></ul>
-    <p class="note">Оплата только через магазин приложений. Цена зависит от страны и показывается в магазине перед покупкой. Ответы носят общий характер и не являются медицинской консультацией.</p>
-  </div>
-  <div class="ai-pic rv">
-    <div class="phone "><img src="/assets/img/ru/ai-ask.webp" alt="Экран «Спроси ИИ» в E-PtAi: предлагаемые темы" width="560" height="1195" loading="lazy" decoding="async"></div>
-    <div class="chars">
-      <figure><img src="/assets/img/lara-ai.webp" alt="Lara Volkova, персонаж, созданный ИИ" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lara <b>AI</b></figcaption></figure>
-      <figure><img src="/assets/img/lukas-ai.webp" alt="Lukas Demirova, персонаж, созданный ИИ" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lukas <b>AI</b></figcaption></figure>
-      <p>Лара и Лукас — ИИ-персонажи E-PtAi; это не реальные люди и не тренеры.</p>
-    </div>
-  </div></div><div class="pane" data-pane="1" hidden><div class="pane-text"><p class="say">Занятия в шести категориях из библиотеки упражнений. Запускаются занятия с готовыми клипами, остальные отмечены «Скоро».</p><ul class="cats6"><li>Фитнес</li><li>Йога</li><li>Пилатес</li><li>Кардио</li><li>Сила</li><li>Растяжка</li></ul><p class="note">Занятия собираются из клипов библиотеки упражнений.</p></div><div class="pane-pic"><div class="phone"><img src="/assets/img/ru/ai-studio.webp" alt="Студия ИИ-занятий" width="560" height="1195" loading="lazy" decoding="async"></div></div></div><div class="pane" data-pane="2" hidden><div class="pane-text"><p class="soon rv">Скоро</p><p class="say">Камера включена, занятие один на один с Ларой или Лукасом. Следит за движением, исправляет ошибки и мотивирует.</p><p class="note">В разработке. Не входит в ИИ-тренера, будет продаваться отдельно.</p><p class="note">Лара и Лукас — ИИ-персонажи E-PtAi; это не реальные люди и не тренеры.</p></div>
-    <figure class="lesson-demo"><div class="phone demo-phone"><video muted loop playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="ИИ-занятие один на один" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="Воспроизвести" data-play="Воспроизвести" data-pause="Пауза"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Включить звук" data-on="Включить звук" data-off="Выключить звук"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg></button></div><figcaption>Концептуальное видео, создано с помощью ИИ. Функция в разработке.</figcaption><p class="note">Показ на турецком: субтитры видео на турецком языке.</p></figure></div></div>
+<section class="sec duo ai" id="dersler">
+  <div class="duo-head"><h2 class="rv">ИИ-занятие один на один</h2><div class="tabs rv" role="group" data-seg><button type="button" data-pane="0" aria-pressed="true">ИИ-занятие один на один</button><button type="button" data-pane="1" aria-pressed="false">Студия ИИ-занятий</button></div></div>
+  <div class="duo-body"><div class="pane" data-pane="0"><div class="pane-text"><p class="soon rv">Скоро</p><p class="say">Камера включена, занятие один на один с Ларой или Лукасом. Следит за движением, исправляет ошибки и мотивирует.</p><p class="note">В разработке. Не входит в ИИ-тренера, будет продаваться отдельно.</p><p class="note">Лара и Лукас — ИИ-персонажи E-PtAi; это не реальные люди и не тренеры.</p></div>
+    <figure class="lesson-demo"><div class="phone demo-phone"><video data-lesson muted playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="ИИ-занятие один на один" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="Воспроизвести" data-play="Воспроизвести" data-pause="Пауза"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Включить звук" data-on="Включить звук" data-off="Выключить звук"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">Включить звук</span></button></div><p class="note">Показ на турецком: субтитры видео на турецком языке.</p></figure></div><div class="pane" data-pane="1" hidden><div class="pane-text"><p class="say">Занятия в шести категориях из библиотеки упражнений. Запускаются занятия с готовыми клипами, остальные отмечены «Скоро».</p><ul class="cats6"><li>Фитнес</li><li>Йога</li><li>Пилатес</li><li>Кардио</li><li>Сила</li><li>Растяжка</li></ul><p class="note">Занятия собираются из клипов библиотеки упражнений.</p></div><div class="pane-pic"><div class="phone"><img src="/assets/img/ru/ai-studio.webp" alt="Студия ИИ-занятий" width="560" height="1195" loading="lazy" decoding="async"></div></div></div></div>
 </section>
 
 <section class="sec wd cine" id="saat-widget">
@@ -206,13 +194,6 @@
     <ul class="rows rv"><li>Выбор виджета на главном экране<em class="soon">Скоро</em></li><li>Напоминания о движении<em class="soon">Предпросмотр</em></li></ul>
     <p class="badge rv">Готовимся к интеграции с умными часами.</p></div>
   <ul class="tiles rv"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span>Минуты</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4c2 0 3 2 3 5s-1 4-3 4-3-2-3-5 1-4 3-4zM15 11c2 0 3 2 3 4.5S17 20 15 20s-3-2-3-4.5 1-4.5 3-4.5z"/></svg><span>Шаги</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1 3.2 5.5 5.5 5.5 10.5a5.5 5.5 0 0 1-11 0c0-2.4 1.2-4 2.6-5.3.2 1.6 1 2.6 2.1 3.1.4-2.8.1-5.5.8-8.3z"/><path d="M12 19a2.5 2.5 0 0 1-2.5-2.5c0-1.4 1-2.2 2.5-3.8 1.5 1.6 2.5 2.4 2.5 3.8A2.5 2.5 0 0 1 12 19z"/></svg><span>Калории</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/></svg><span>Вода</span></li></ul></div>
-</section>
-
-<section class="sec tg" id="egitmen-salon">
-  <div class="tg-head"><p class="soon rv">Скоро</p><h2 class="rv">Тренерам и залам</h2></div>
-  <div class="plans rv"><div class="glass plan-card"><h3>Тариф тренера</h3><p class="amount-s"><span dir="ltr">₺299</span><small>/мес</small></p><p>Первый месяц бесплатно · 50 активных учеников · +₺299/мес за каждые следующие 50</p></div><div class="glass plan-card"><h3>Тариф зала</h3><p class="amount-s"><span dir="ltr">₺999</span><small>/мес</small></p><p>Первый месяц бесплатно · 200 активных участников · +₺299/мес за каждые следующие 200</p></div></div>
-  <ul class="feats rv"><li>QR для входа, обновляется каждые 30 секунд</li><li>Киоск у двери</li><li>Продажи и оплаты Vitamin Bar</li><li>Роли: участник, сотрудник, управляющий</li></ul>
-  <p class="note rv">Счёт выставляется организации. Отдельное приложение: E-PtAi Salon.</p>
 </section>
 
 <section class="sec faq" id="sss">
@@ -232,6 +213,33 @@
     <details class="rv"><summary>Что такое «Шагаем по 81 провинции»?</summary><p>Соревнование провинций на основе ходьбы: стартует в 30 крупнейших провинциях, и каждую неделю подтверждённый победитель провинции получает месяц ИИ-тренера бесплатно. Скоро; пока не открыто.</p></details>
     <details class="rv"><summary>Есть ли решение для тренеров и залов?</summary><p>Да, готовится как отдельное приложение с отдельными тарифами. Скоро; счёт выставляется организации.</p></details>
   </div>
+</section>
+
+<section class="sec ai" id="ai-koc">
+  <div class="pane ai-grid"><div class="glass price rv">
+    <h2>ИИ-тренер</h2>
+    <p class="amount"><span dir="ltr">₺99,99</span><small>/мес</small></p>
+    <p class="amount-y"><span class="or">или</span> <span dir="ltr">₺719,99</span><small>/год</small></p>
+    <p class="say">Одна подписка. Без пробного периода. Начни бесплатно, двигайся и следи за прогрессом!</p>
+    <ul class="ticks"><li>Общие ответы о тренировках и питании</li><li>План пересобирается каждую неделю</li><li>Без рекламы для подписчиков</li></ul>
+    <ul class="feats"><li>Анимированный робот-тренер</li><li>Женский и мужской вид</li><li>11 цветовых тем</li></ul>
+    <p class="note">Оплата только через магазин приложений. Цена зависит от страны и показывается в магазине перед покупкой. Ответы носят общий характер и не являются медицинской консультацией.</p>
+  </div>
+  <div class="ai-pic rv">
+    <figure class="lesson-demo"><div class="phone demo-phone"><video data-lesson muted playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="ИИ-занятие один на один" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="Воспроизвести" data-play="Воспроизвести" data-pause="Пауза"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Включить звук" data-on="Включить звук" data-off="Выключить звук"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">Включить звук</span></button></div><p class="note lesson-note"><b>ИИ-занятие один на один · Скоро.</b> Не входит в ИИ-тренера, будет продаваться отдельно.</p><p class="note">Показ на турецком: субтитры видео на турецком языке.</p></figure>
+    <div class="chars">
+      <figure><img src="/assets/img/lara-ai.webp" alt="Lara Volkova, персонаж, созданный ИИ" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lara <b>AI</b></figcaption></figure>
+      <figure><img src="/assets/img/lukas-ai.webp" alt="Lukas Demirova, персонаж, созданный ИИ" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lukas <b>AI</b></figcaption></figure>
+      <p>Лара и Лукас — ИИ-персонажи E-PtAi; это не реальные люди и не тренеры.</p>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec tg" id="egitmen-salon">
+  <div class="tg-head"><p class="soon rv">Скоро</p><h2 class="rv">Тренерам и залам</h2></div>
+  <div class="plans rv"><div class="glass plan-card"><h3>Тариф тренера</h3><p class="amount-s"><span dir="ltr">₺299</span><small>/мес</small></p><p>Первый месяц бесплатно · 50 активных учеников · +₺299/мес за каждые следующие 50</p></div><div class="glass plan-card"><h3>Тариф зала</h3><p class="amount-s"><span dir="ltr">₺999</span><small>/мес</small></p><p>Первый месяц бесплатно · 200 активных участников · +₺299/мес за каждые следующие 200</p></div></div>
+  <ul class="feats rv"><li>QR для входа, обновляется каждые 30 секунд</li><li>Киоск у двери</li><li>Продажи и оплаты Vitamin Bar</li><li>Роли: участник, сотрудник, управляющий</li></ul>
+  <p class="note rv">Счёт выставляется организации. Отдельное приложение: E-PtAi Salon.</p>
 </section>
 </main>
 <footer class="foot">

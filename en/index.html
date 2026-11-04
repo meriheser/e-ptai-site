@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>E-PtAi – Workouts, Nutrition and AI Coach in One App</title>
-<meta name="description" content="E-PtAi brings 333 move videos, follow-along classes, a personal plan, nutrition and an AI Coach into one app. Coming soon to the App Store and Google Play.">
+<meta name="description" content="E-PtAi brings 1000 move videos, follow-along classes, a personal plan, nutrition and an AI Coach into one app. Coming soon to the App Store and Google Play.">
 <meta name="theme-color" content="#040A0C">
 <link rel="canonical" href="https://www.e-ptai.com/en/">
 <link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://www.e-ptai.com/en/">
 <meta property="og:title" content="E-PtAi – Workouts, Nutrition and AI Coach in One App">
-<meta property="og:description" content="E-PtAi brings 333 move videos, follow-along classes, a personal plan, nutrition and an AI Coach into one app. Coming soon to the App Store and Google Play.">
+<meta property="og:description" content="E-PtAi brings 1000 move videos, follow-along classes, a personal plan, nutrition and an AI Coach into one app. Coming soon to the App Store and Google Play.">
 <meta property="og:image" content="https://www.e-ptai.com/assets/img/og-en.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -26,6 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/img/icon-64.png" type="image/png">
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/video/ai-lesson-demo.webp" as="image">
 <link rel="stylesheet" href="/assets/site.css">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('e-theme')==='logo')document.documentElement.dataset.theme='logo'}catch(e){}try{if(sessionStorage.getItem('e-intro'))document.documentElement.classList.add('no-intro');else sessionStorage.setItem('e-intro','1')}catch(e){}</script>
 <script defer src="/assets/site.js" onerror="document.documentElement.classList.remove('js')"></script>
@@ -55,27 +56,30 @@
       <div class="light" aria-hidden="true"></div>
       <div class="pedestal" aria-hidden="true"></div>
       <div class="ring">
-        <figure class="ph" data-i="0"><div class="bob"><div class="phone "><img src="/assets/img/en/dashboard.webp" alt="E-PtAi home screen: AI Coach card, goal weight, daily tracking and meal plan" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
-        <figure class="ph" data-i="1"><div class="bob"><div class="phone "><img src="/assets/img/en/workout.webp" alt="E-PtAi workout screen: today's moves and the start button" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
-        <figure class="ph" data-i="2"><div class="bob"><div class="phone "><img src="/assets/img/en/class-run.webp" alt="E-PtAi follow-along class screen: full-screen move video and countdown" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
+        <figure class="ph vid" data-i="0"><div class="bob"><div class="phone"><video data-lesson muted playsinline preload="none" poster="/assets/video/ai-lesson-demo.webp" width="720" height="1280" aria-label="One-to-one AI lesson"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div></div></figure>
+        <figure class="ph" data-i="0"><div class="bob"><div class="phone "><img src="/assets/img/en/dashboard.webp" alt="E-PtAi home screen: AI Coach card, goal weight, daily tracking and meal plan" width="560" height="1195" decoding="sync"></div></div></figure>
+        <figure class="ph" data-i="1"><div class="bob"><div class="phone "><img src="/assets/img/en/workout.webp" alt="E-PtAi workout screen: today's moves and the start button" width="560" height="1195" decoding="sync"></div></div></figure>
+        <figure class="ph" data-i="2"><div class="bob"><div class="phone "><img src="/assets/img/en/class-run.webp" alt="E-PtAi follow-along class screen: full-screen move video and countdown" width="560" height="1195" decoding="sync"></div></div></figure>
         <figure class="ph" data-i="3"><div class="bob"><div class="phone "><img src="/assets/img/en/ranks.webp" alt="E-PtAi Strength Score screen: the Granite rank and the shields of all ten ranks" width="560" height="1195" loading="lazy" decoding="sync"></div></div></figure>
         <figure class="ph" data-i="4"><div class="bob"><div class="phone "><img src="/assets/img/en/plan.webp" alt="E-PtAi Your plan is ready screen: goal chart, program and daily calories" width="560" height="1195" loading="lazy" decoding="sync"></div></div></figure>
       </div>
+      <p class="welcome-cap" hidden>Welcome to E-PtAi. It will be your digital personal trainer. This app will change your life. Download it for a new you.</p>
+      <div class="hero-vctl"><div class="vctl" role="group"><button type="button" class="v-play" aria-label="Play" data-play="Play" data-pause="Pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Sound on" data-on="Sound on" data-off="Sound off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">Sound on</span></button></div></div>
       <button class="arrow prev" type="button" aria-label="Previous screen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
       <button class="arrow next" type="button" aria-label="Next screen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
     <div class="ctl-row">
-      <p class="cap" aria-live="polite">Home</p>
+      <p class="cap" aria-live="polite">One-to-one AI lesson · Coming soon</p>
       <div class="track" aria-hidden="true"><span></span></div>
       <button class="auto" type="button" aria-label="Pause auto-play" data-pause="Pause auto-play" data-play="Start auto-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-pause" d="M8 5v14M16 5v14"/><path class="ic-play" d="M8 5l11 7-11 7z"/></svg></button>
     </div>
-    <template id="caps"><i>Home</i><i>Workout</i><i>Follow-Along Class</i><i>Strength Score</i><i>Your plan is ready</i></template>
+    <template id="caps"><i>One-to-one AI lesson · Coming soon</i><i>Home</i><i>Workout</i><i>Follow-Along Class</i><i>Strength Score</i><i>Your plan is ready</i></template>
   </div>
 </section>
 
 <section class="sec lib" id="hareketler">
   <div class="lib-text">
-    <h2 class="rv">333 move videos</h2>
+    <h2 class="rv">1000 move videos</h2>
     <p class="say rv">Watch each move, then do it together.</p>
     <div class="tabs rv" role="group" aria-label="Choose a style"><button type="button" data-tab="0" aria-pressed="true">Fitness</button><button type="button" data-tab="1" aria-pressed="false">Yoga</button><button type="button" data-tab="2" aria-pressed="false">Pilates</button><button type="button" data-tab="3" aria-pressed="false">Home</button></div>
     <ul class="feats rv"><li>Find by muscle</li><li>Full-screen player</li><li>Voice coach</li><li>Rep counter</li></ul>
@@ -178,26 +182,10 @@
   <div class="pair rv"><div class="phone tilt-a"><img src="/assets/img/en/share.webp" alt="E-PtAi story share card with a sample workout summary" width="560" height="1195" loading="lazy" decoding="async"></div><div class="phone tilt-b"><img src="/assets/img/en/friends.webp" alt="E-PtAi Friends screen: invite code and weekly duel, with sample names" width="560" height="1195" loading="lazy" decoding="async"></div></div>
 </section>
 
-<section class="sec ai" id="ai-koc">
-  <div class="duo-head"><div class="tabs rv" role="group" data-seg><button type="button" data-pane="0" aria-pressed="true">AI Coach</button><button type="button" data-pane="1" aria-pressed="false">AI Lesson Studio</button><button type="button" data-pane="2" aria-pressed="false">One-to-one AI lesson</button></div></div>
-  <div class="duo-body"><div class="pane ai-grid" data-pane="0"><div class="glass price rv">
-    <h2>AI Coach</h2>
-    <p class="amount"><span dir="ltr">₺99.99</span><small>/month</small></p>
-    <p class="amount-y"><span class="or">or</span> <span dir="ltr">₺719.99</span><small>/year</small></p>
-    <p class="say">One subscription. No trial. Start free, get moving, track your progress!</p>
-    <ul class="ticks"><li>General answers on training and nutrition</li><li>Your plan rebuilt every week</li><li>No ads for AI Coach members</li></ul>
-    <ul class="feats"><li>Animated coach robot</li><li>Female and male look</li><li>11 colour themes</li></ul>
-    <p class="note">Payment only through the app store. Prices may vary by country and are shown in the store before you buy. Answers are general information, not medical advice.</p>
-  </div>
-  <div class="ai-pic rv">
-    <div class="phone "><img src="/assets/img/en/ai-ask.webp" alt="E-PtAi Ask AI screen: suggested topics" width="560" height="1195" loading="lazy" decoding="async"></div>
-    <div class="chars">
-      <figure><img src="/assets/img/lara-ai.webp" alt="Lara Volkova, AI-generated character" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lara <b>AI</b></figcaption></figure>
-      <figure><img src="/assets/img/lukas-ai.webp" alt="Lukas Demirova, AI-generated character" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lukas <b>AI</b></figcaption></figure>
-      <p>Lara and Lukas are E-PtAi's AI characters; they are not real people or trainers.</p>
-    </div>
-  </div></div><div class="pane" data-pane="1" hidden><div class="pane-text"><p class="say">Lessons in six categories, built from the move library. Lessons with finished clips can be started; the rest wait marked Soon.</p><ul class="cats6"><li>Fitness</li><li>Yoga</li><li>Pilates</li><li>Cardio</li><li>Strength</li><li>Stretching</li></ul><p class="note">Lessons are made of the clips in the move library.</p></div><div class="pane-pic"><div class="phone"><img src="/assets/img/en/ai-studio.webp" alt="AI Lesson Studio" width="560" height="1195" loading="lazy" decoding="async"></div></div></div><div class="pane" data-pane="2" hidden><div class="pane-text"><p class="soon rv">Coming soon</p><p class="say">Camera on, a live lesson with Lara or Lukas. It follows your movement, corrects mistakes and keeps you motivated.</p><p class="note">In development. Not included in AI Coach; it will be sold separately.</p><p class="note">Lara and Lukas are E-PtAi's AI characters; they are not real people or trainers.</p></div>
-    <figure class="lesson-demo"><div class="phone demo-phone"><video muted loop playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="One-to-one AI lesson" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="Play" data-play="Play" data-pause="Pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Sound on" data-on="Sound on" data-off="Sound off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg></button></div><figcaption>Concept video, generated with AI. Feature in development.</figcaption><p class="note">Shown in Turkish: the video subtitles are in Turkish.</p></figure></div></div>
+<section class="sec duo ai" id="dersler">
+  <div class="duo-head"><h2 class="rv">One-to-one AI lesson</h2><div class="tabs rv" role="group" data-seg><button type="button" data-pane="0" aria-pressed="true">One-to-one AI lesson</button><button type="button" data-pane="1" aria-pressed="false">AI Lesson Studio</button></div></div>
+  <div class="duo-body"><div class="pane" data-pane="0"><div class="pane-text"><p class="soon rv">Coming soon</p><p class="say">Camera on, a live lesson with Lara or Lukas. It follows your movement, corrects mistakes and keeps you motivated.</p><p class="note">In development. Not included in AI Coach; it will be sold separately.</p><p class="note">Lara and Lukas are E-PtAi's AI characters; they are not real people or trainers.</p></div>
+    <figure class="lesson-demo"><div class="phone demo-phone"><video data-lesson muted playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="One-to-one AI lesson" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="Play" data-play="Play" data-pause="Pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Sound on" data-on="Sound on" data-off="Sound off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">Sound on</span></button></div><p class="note">Shown in Turkish: the video subtitles are in Turkish.</p></figure></div><div class="pane" data-pane="1" hidden><div class="pane-text"><p class="say">Lessons in six categories, built from the move library. Lessons with finished clips can be started; the rest wait marked Soon.</p><ul class="cats6"><li>Fitness</li><li>Yoga</li><li>Pilates</li><li>Cardio</li><li>Strength</li><li>Stretching</li></ul><p class="note">Lessons are made of the clips in the move library.</p></div><div class="pane-pic"><div class="phone"><img src="/assets/img/en/ai-studio.webp" alt="AI Lesson Studio" width="560" height="1195" loading="lazy" decoding="async"></div></div></div></div>
 </section>
 
 <section class="sec wd cine" id="saat-widget">
@@ -206,13 +194,6 @@
     <ul class="rows rv"><li>Home screen widget choice<em class="soon">Coming soon</em></li><li>Movement reminders<em class="soon">Preview</em></li></ul>
     <p class="badge rv">Preparing for smartwatch integrations.</p></div>
   <ul class="tiles rv"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span>Minutes</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4c2 0 3 2 3 5s-1 4-3 4-3-2-3-5 1-4 3-4zM15 11c2 0 3 2 3 4.5S17 20 15 20s-3-2-3-4.5 1-4.5 3-4.5z"/></svg><span>Steps</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1 3.2 5.5 5.5 5.5 10.5a5.5 5.5 0 0 1-11 0c0-2.4 1.2-4 2.6-5.3.2 1.6 1 2.6 2.1 3.1.4-2.8.1-5.5.8-8.3z"/><path d="M12 19a2.5 2.5 0 0 1-2.5-2.5c0-1.4 1-2.2 2.5-3.8 1.5 1.6 2.5 2.4 2.5 3.8A2.5 2.5 0 0 1 12 19z"/></svg><span>Calories</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/></svg><span>Water</span></li></ul></div>
-</section>
-
-<section class="sec tg" id="egitmen-salon">
-  <div class="tg-head"><p class="soon rv">Coming soon</p><h2 class="rv">Trainer and Gym</h2></div>
-  <div class="plans rv"><div class="glass plan-card"><h3>Trainer plan</h3><p class="amount-s"><span dir="ltr">₺299</span><small>/mo</small></p><p>First month free · 50 active students · +₺299/mo for each extra 50</p></div><div class="glass plan-card"><h3>Gym plan</h3><p class="amount-s"><span dir="ltr">₺999</span><small>/mo</small></p><p>First month free · 200 active members · +₺299/mo for each extra 200</p></div></div>
-  <ul class="feats rv"><li>Entrance QR that renews every 30 seconds</li><li>Door kiosk</li><li>Vitamin Bar sales and payments</li><li>Member, staff and manager roles</li></ul>
-  <p class="note rv">Billed to the organisation. A separate app: E-PtAi Salon.</p>
 </section>
 
 <section class="sec faq" id="sss">
@@ -232,6 +213,33 @@
     <details class="rv"><summary>What is Walking Across 81 Provinces?</summary><p>A walking-based province contest: it starts in 30 metropolitan provinces, and each week every province’s verified winner earns one free month of AI Coach. Soon; not open yet.</p></details>
     <details class="rv"><summary>Is there something for trainers and gyms?</summary><p>Yes, it is being prepared as a separate app with separate plans. Soon; billed to the organisation.</p></details>
   </div>
+</section>
+
+<section class="sec ai" id="ai-koc">
+  <div class="pane ai-grid"><div class="glass price rv">
+    <h2>AI Coach</h2>
+    <p class="amount"><span dir="ltr">₺99.99</span><small>/month</small></p>
+    <p class="amount-y"><span class="or">or</span> <span dir="ltr">₺719.99</span><small>/year</small></p>
+    <p class="say">One subscription. No trial. Start free, get moving, track your progress!</p>
+    <ul class="ticks"><li>General answers on training and nutrition</li><li>Your plan rebuilt every week</li><li>No ads for AI Coach members</li></ul>
+    <ul class="feats"><li>Animated coach robot</li><li>Female and male look</li><li>11 colour themes</li></ul>
+    <p class="note">Payment only through the app store. Prices may vary by country and are shown in the store before you buy. Answers are general information, not medical advice.</p>
+  </div>
+  <div class="ai-pic rv">
+    <figure class="lesson-demo"><div class="phone demo-phone"><video data-lesson muted playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="One-to-one AI lesson" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="Play" data-play="Play" data-pause="Pause"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Sound on" data-on="Sound on" data-off="Sound off"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">Sound on</span></button></div><p class="note lesson-note"><b>One-to-one AI lesson · Coming soon.</b> Not included in AI Coach; it will be sold separately.</p><p class="note">Shown in Turkish: the video subtitles are in Turkish.</p></figure>
+    <div class="chars">
+      <figure><img src="/assets/img/lara-ai.webp" alt="Lara Volkova, AI-generated character" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lara <b>AI</b></figcaption></figure>
+      <figure><img src="/assets/img/lukas-ai.webp" alt="Lukas Demirova, AI-generated character" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lukas <b>AI</b></figcaption></figure>
+      <p>Lara and Lukas are E-PtAi's AI characters; they are not real people or trainers.</p>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec tg" id="egitmen-salon">
+  <div class="tg-head"><p class="soon rv">Coming soon</p><h2 class="rv">Trainer and Gym</h2></div>
+  <div class="plans rv"><div class="glass plan-card"><h3>Trainer plan</h3><p class="amount-s"><span dir="ltr">₺299</span><small>/mo</small></p><p>First month free · 50 active students · +₺299/mo for each extra 50</p></div><div class="glass plan-card"><h3>Gym plan</h3><p class="amount-s"><span dir="ltr">₺999</span><small>/mo</small></p><p>First month free · 200 active members · +₺299/mo for each extra 200</p></div></div>
+  <ul class="feats rv"><li>Entrance QR that renews every 30 seconds</li><li>Door kiosk</li><li>Vitamin Bar sales and payments</li><li>Member, staff and manager roles</li></ul>
+  <p class="note rv">Billed to the organisation. A separate app: E-PtAi Salon.</p>
 </section>
 </main>
 <footer class="foot">

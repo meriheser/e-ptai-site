@@ -27,11 +27,11 @@
 
   // Carousel: one number (pos) drives every phone. Drag, arrows, keys and the timer set its target.
   var stage = $('.stage'), phones = $$('.ph'), fill = $('.track span'), cap = $('.cap'), autoBtn = $('.auto');
-  var caps = $$('i', $('#caps').content);
+  var caps = $$('i', $('#caps').content), heroVid = $('.ph video');
   var n = phones.length, pos = 0, target = 0, active = 0, w = 200, narrow = false;
   var STEP = 3500, playing = !still, hold = false, t0 = performance.now(), elapsed = 0, seen = true, raf = 0;
 
-  function measure() { w = phones[0].offsetWidth; narrow = innerWidth < 760; }
+  function measure() { w = phones[phones.length > 1 ? 1 : 0].offsetWidth; narrow = innerWidth < 760; }
   function apply() {
     phones.forEach(function (p, i) {
       var d = ((i - pos + n / 2) % n + n) % n - n / 2, a = Math.abs(d);
@@ -43,7 +43,7 @@
       p.style.setProperty('--dim', Math.min(a * .42, .8).toFixed(2));
     });
     var r = ((Math.round(pos) % n) + n) % n;
-    if (r !== active) { active = r; cap.textContent = caps[r].textContent; }
+    if (r !== active) { active = r; cap.textContent = caps[r].textContent; stage.classList.toggle('vid-off', r !== 0); root.dispatchEvent(new CustomEvent('heroslide', { detail: r })); }
   }
   function bar() {
     var f = playing ? Math.min(1, elapsed / STEP) : 1;
@@ -54,7 +54,7 @@
     raf = 0;
     if (!seen) return;
     var dt = now - t0; t0 = now;
-    if (playing && !hold) {
+    if (playing && !hold && !(heroVid && !heroVid.paused && !heroVid.ended) && !(window.__lesson && window.__lesson.busy())) {
       elapsed += Math.min(dt, 100);
       if (elapsed >= STEP) { elapsed = 0; target = Math.round(target) + 1; }
     }
@@ -133,18 +133,87 @@
     });
   });
 
-  // One-to-one AI lesson concept video: starts muted and paused; its own play and sound buttons.
-  (function () {
-    var fig = $('.lesson-demo'); if (!fig) return;
-    var v = $('video', fig), pl = $('.v-play', fig), sn = $('.v-snd', fig);
-    function sync() {
+  // One-to-one AI lesson video, in three places (first page, lessons page, AI Coach page).
+  // It tries to start with sound; when the browser refuses, it starts muted and the first touch, click or key turns the sound on
+  // and restarts it. One video at a time; it stops when its page leaves the screen. Reduced motion: no autoplay.
+  // Welcome voice: set by assets/audio/welcome-<lang>.mp3 (set window.__WELCOME = true, or the constant below, once the files exist).
+  var lessonVideos = $$('video[data-lesson]');
+  if (lessonVideos.length) (function () {
+    var WELCOME = window.__WELCOME !== undefined ? window.__WELCOME : true;
+    var vids = lessonVideos, userMuted = false, wa = null, welcomeDone = false, busy = false, heroOn = false;
+    var hv = heroVid, wcap = $('.welcome-cap');
+    window.__lesson = { busy: function () { return busy; }, vids: vids, wa: function () { return wa; } };
+    function ctl(v) { return v.closest('.lesson-demo') || $('.hero-vctl'); }
+    function sync(v) {
+      var c = ctl(v), pl = $('.v-play', c), sn = $('.v-snd', c);
       pl.classList.toggle('on', !v.paused); pl.setAttribute('aria-label', v.paused ? pl.dataset.play : pl.dataset.pause);
       sn.classList.toggle('on', !v.muted); sn.setAttribute('aria-label', v.muted ? sn.dataset.on : sn.dataset.off);
+      sn.classList.toggle('need', v.muted && !userMuted && !v.paused);
     }
-    pl.addEventListener('click', function () { if (v.paused) { var p = v.play(); if (p) p.catch(function () {}); } else v.pause(); });
-    sn.addEventListener('click', function () { v.muted = !v.muted; sync(); });
-    v.addEventListener('play', sync); v.addEventListener('pause', sync); sync();
-    new IntersectionObserver(function (es) { if (!es[0].isIntersecting) v.pause(); }).observe(v);
+    function start(v, fromZero) {
+      if (still || v._user || document.hidden || (v === hv && busy)) return;
+      if (v.ended || fromZero) v.currentTime = 0;
+      vids.forEach(function (o) { if (o !== v) o.pause(); });
+      v.volume = 1; v.muted = userMuted;
+      var p = v.play();
+      if (p) p.catch(function () {
+        if (userMuted) return;
+        v.muted = true; var q = v.play(); if (q) q.catch(function () {}); sync(v);
+      });
+    }
+    function hideCap() { if (wcap) wcap.hidden = true; }
+    function finish() { welcomeDone = true; busy = false; hideCap(); hv._user = false; start(hv, true); }
+    function playWelcome() {
+      if (!WELCOME || welcomeDone || still || !hv || (wa && busy)) return false;
+      if (!wa) {
+        wa = new Audio('/assets/audio/welcome-' + (root.lang || 'tr') + '.mp3'); wa.preload = 'auto';
+        wa.addEventListener('ended', finish);
+        wa.addEventListener('playing', function () { if (wcap) wcap.hidden = false; });
+        wa.addEventListener('error', function () { welcomeDone = true; busy = false; hideCap(); start(hv, true); });
+      }
+      busy = true; hv.pause(); hv.currentTime = 0; wa.currentTime = 0;
+      var p = wa.play();
+      if (p) p.catch(function (e) { if (e && e.name !== 'NotAllowedError') return; busy = false; done = false; hideCap(); start(hv); });   // blocked: the muted video starts, the voice waits for the first touch
+      return true;
+    }
+    vids.forEach(function (v) {
+      var c = ctl(v), pl = $('.v-play', c), sn = $('.v-snd', c);
+      pl.addEventListener('click', function () {
+        if (busy && v === hv) { wa.pause(); busy = false; welcomeDone = true; hideCap(); }
+        if (v.paused) { v._user = false; start(v); } else { v._user = true; v.pause(); }
+      });
+      sn.addEventListener('click', function () {
+        if (busy && v === hv) { wa.pause(); busy = false; welcomeDone = true; hideCap(); }
+        if (v.muted) { userMuted = false; v.muted = false; v.volume = 1; if (v.paused) { v._user = false; start(v); } }
+        else { userMuted = true; v.muted = true; }
+        vids.forEach(sync);
+      });
+      ['play', 'pause', 'ended', 'volumechange'].forEach(function (t) { v.addEventListener(t, function () { sync(v); }); });
+      v.addEventListener('play', function () { vids.forEach(function (o) { if (o !== v) o.pause(); }); });
+      new IntersectionObserver(function (es) {
+        var on = es[0].isIntersecting;
+        if (v === hv) { heroOn = on; if (!on && wa && busy) { wa.pause(); busy = false; hideCap(); } }
+        if (!on) { v.pause(); return; }
+        if (v === hv && playWelcome()) return;
+        start(v);
+      }, { threshold: .4 }).observe(v);
+      sync(v);
+    });
+    // The first touch, click or key: the sound comes on (the welcome voice first on the first page); the click itself is left alone.
+    function unlock(e) {
+      if (done || (e.target.closest && e.target.closest('.vctl'))) return;
+      if (hv && heroOn && WELCOME && !welcomeDone && !still) { done = true; playWelcome(); return; }
+      var v = vids.filter(function (x) { return !x.paused && x.muted; })[0];
+      if (v && !userMuted && !still) { done = true; v.muted = false; v.volume = 1; v.currentTime = 0; var p = v.play(); if (p) p.catch(function () { v.muted = true; v.play(); done = false; }); sync(v); }
+    }
+    var done = false;
+    ['pointerdown', 'pointerup', 'touchend', 'keydown', 'click'].forEach(function (t) { document.addEventListener(t, unlock, { capture: true, passive: true }); });
+    root.addEventListener('heroslide', function (e) {
+      if (!hv) return;
+      if (e.detail !== 0) { hv.pause(); if (wa && busy) { wa.pause(); busy = false; hideCap(); } }
+      else if (heroOn) { if (!playWelcome()) start(hv); }
+    });
+    document.addEventListener('visibilitychange', function () { if (document.hidden) { vids.forEach(function (v) { v.pause(); }); if (wa && busy) { wa.pause(); busy = false; hideCap(); } } });
   })();
 
   // Follow-class builder: same numbers as components/follow-class.ts (fitness timing).
@@ -188,7 +257,14 @@
       if (cur !== seenCur) { seenCur = cur; shownAt = Date.now(); }
       if (!playing || still || document.hidden || cur === panels.length - 1 || Date.now() - userAt < 20000) return;
       var p = panels[cur], tall = p.scrollHeight > p.clientHeight + 2;
-      if (Date.now() - shownAt >= (cur === 0 ? 14000 : tall ? 16000 : 9000)) { shownAt = Date.now(); to(cur + 1); }
+      var need = cur === 0 ? 14000 : tall ? 16000 : 9000, held = Date.now() - shownAt;
+      var lv = window.__lesson && window.__lesson.vids.filter(function (v) { return p.contains(v) && v.offsetParent; })[0];
+      if (lv) {
+        need = Math.max(need, 16000);
+        if (window.__lesson.busy()) need = Infinity;
+        else if (!lv.paused && !lv.ended && (!lv.muted || held < 34000)) need = Infinity;
+      }
+      if (held >= need) { shownAt = Date.now(); to(cur + 1); }
     }, 500);
     var cue = document.createElement('button'); cue.type = 'button'; cue.className = 'cue';
     cue.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
@@ -252,7 +328,7 @@
         if (e.isIntersecting) { var p = e.target.play(); if (p) p.catch(function () {}); } else e.target.pause();
       });
     }, { threshold: .3 });
-    $$('video').forEach(function (v) { if (!v.closest('.lesson-demo')) io.observe(v); });
+    $$('video').forEach(function (v) { if (!v.hasAttribute('data-lesson')) io.observe(v); });
 
     // Entrances exist only after this script ran, so a script failure never hides content.
     root.classList.add('rv-on');

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>E-PtAi – التمارين والتغذية والمدرب الذكي في تطبيق واحد</title>
-<meta name="description" content="يجمع E-PtAi بين 333 فيديو للتمارين وحصص المتابعة والخطة الشخصية والتغذية والمدرب الذكي في تطبيق واحد. قريبًا على App Store وGoogle Play.">
+<meta name="description" content="يجمع E-PtAi بين 1000 فيديو للتمارين وحصص المتابعة والخطة الشخصية والتغذية والمدرب الذكي في تطبيق واحد. قريبًا على App Store وGoogle Play.">
 <meta name="theme-color" content="#040A0C">
 <link rel="canonical" href="https://www.e-ptai.com/ar/">
 <link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="ar_AR">
 <meta property="og:url" content="https://www.e-ptai.com/ar/">
 <meta property="og:title" content="E-PtAi – التمارين والتغذية والمدرب الذكي في تطبيق واحد">
-<meta property="og:description" content="يجمع E-PtAi بين 333 فيديو للتمارين وحصص المتابعة والخطة الشخصية والتغذية والمدرب الذكي في تطبيق واحد. قريبًا على App Store وGoogle Play.">
+<meta property="og:description" content="يجمع E-PtAi بين 1000 فيديو للتمارين وحصص المتابعة والخطة الشخصية والتغذية والمدرب الذكي في تطبيق واحد. قريبًا على App Store وGoogle Play.">
 <meta property="og:image" content="https://www.e-ptai.com/assets/img/og-ar.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -26,6 +26,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/img/icon-64.png" type="image/png">
 <link rel="preload" href="/assets/fonts/cairo-arabic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/video/ai-lesson-demo.webp" as="image">
 <link rel="stylesheet" href="/assets/site.css">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('e-theme')==='logo')document.documentElement.dataset.theme='logo'}catch(e){}try{if(sessionStorage.getItem('e-intro'))document.documentElement.classList.add('no-intro');else sessionStorage.setItem('e-intro','1')}catch(e){}</script>
 <script defer src="/assets/site.js" onerror="document.documentElement.classList.remove('js')"></script>
@@ -55,27 +56,30 @@
       <div class="light" aria-hidden="true"></div>
       <div class="pedestal" aria-hidden="true"></div>
       <div class="ring">
-        <figure class="ph" data-i="0"><div class="bob"><div class="phone "><img src="/assets/img/ar/dashboard.webp" alt="الشاشة الرئيسية في E-PtAi: بطاقة المدرب الذكي والوزن المستهدف والمتابعة اليومية وخطة الوجبات" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
-        <figure class="ph" data-i="1"><div class="bob"><div class="phone "><img src="/assets/img/ar/workout.webp" alt="شاشة التمرين في E-PtAi: تمارين اليوم وزر البدء" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
-        <figure class="ph" data-i="2"><div class="bob"><div class="phone "><img src="/assets/img/ar/class-run.webp" alt="شاشة حصة المتابعة في E-PtAi: فيديو التمرين بملء الشاشة والعد التنازلي" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
+        <figure class="ph vid" data-i="0"><div class="bob"><div class="phone"><video data-lesson muted playsinline preload="none" poster="/assets/video/ai-lesson-demo.webp" width="720" height="1280" aria-label="درس ذكي فردي"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div></div></figure>
+        <figure class="ph" data-i="0"><div class="bob"><div class="phone "><img src="/assets/img/ar/dashboard.webp" alt="الشاشة الرئيسية في E-PtAi: بطاقة المدرب الذكي والوزن المستهدف والمتابعة اليومية وخطة الوجبات" width="560" height="1195" decoding="sync"></div></div></figure>
+        <figure class="ph" data-i="1"><div class="bob"><div class="phone "><img src="/assets/img/ar/workout.webp" alt="شاشة التمرين في E-PtAi: تمارين اليوم وزر البدء" width="560" height="1195" decoding="sync"></div></div></figure>
+        <figure class="ph" data-i="2"><div class="bob"><div class="phone "><img src="/assets/img/ar/class-run.webp" alt="شاشة حصة المتابعة في E-PtAi: فيديو التمرين بملء الشاشة والعد التنازلي" width="560" height="1195" decoding="sync"></div></div></figure>
         <figure class="ph" data-i="3"><div class="bob"><div class="phone "><img src="/assets/img/ar/ranks.webp" alt="شاشة مؤشر القوة في E-PtAi: رتبة الصخرة ودروع الرتب العشر" width="560" height="1195" loading="lazy" decoding="sync"></div></div></figure>
         <figure class="ph" data-i="4"><div class="bob"><div class="phone "><img src="/assets/img/ar/plan.webp" alt="شاشة خطتك جاهزة في E-PtAi: مخطط الهدف والبرنامج والسعرات اليومية" width="560" height="1195" loading="lazy" decoding="sync"></div></div></figure>
       </div>
+      <p class="welcome-cap" hidden>أهلًا بك في E-PtAi. سيكون مدربك الشخصي الرقمي. سيغيّر هذا التطبيق حياتك. حمّله لنسخة جديدة منك.</p>
+      <div class="hero-vctl"><div class="vctl" role="group"><button type="button" class="v-play" aria-label="تشغيل" data-play="تشغيل" data-pause="إيقاف مؤقت"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="تشغيل الصوت" data-on="تشغيل الصوت" data-off="كتم الصوت"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">تشغيل الصوت</span></button></div></div>
       <button class="arrow prev" type="button" aria-label="الشاشة السابقة"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
       <button class="arrow next" type="button" aria-label="الشاشة التالية"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
     <div class="ctl-row">
-      <p class="cap" aria-live="polite">الرئيسية</p>
+      <p class="cap" aria-live="polite">درس ذكي فردي · قريبًا</p>
       <div class="track" aria-hidden="true"><span></span></div>
       <button class="auto" type="button" aria-label="إيقاف التبديل التلقائي" data-pause="إيقاف التبديل التلقائي" data-play="تشغيل التبديل التلقائي"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-pause" d="M8 5v14M16 5v14"/><path class="ic-play" d="M8 5l11 7-11 7z"/></svg></button>
     </div>
-    <template id="caps"><i>الرئيسية</i><i>التمرين</i><i>حصة متابعة</i><i>مؤشر القوة</i><i>خطتك جاهزة</i></template>
+    <template id="caps"><i>درس ذكي فردي · قريبًا</i><i>الرئيسية</i><i>التمرين</i><i>حصة متابعة</i><i>مؤشر القوة</i><i>خطتك جاهزة</i></template>
   </div>
 </section>
 
 <section class="sec lib" id="hareketler">
   <div class="lib-text">
-    <h2 class="rv">333 فيديو للتمارين</h2>
+    <h2 class="rv">1000 فيديو للتمارين</h2>
     <p class="say rv">شاهد كل تمرين، ثم أدِّه معه.</p>
     <div class="tabs rv" role="group" aria-label="اختر نوع التمرين"><button type="button" data-tab="0" aria-pressed="true">اللياقة</button><button type="button" data-tab="1" aria-pressed="false">اليوغا</button><button type="button" data-tab="2" aria-pressed="false">البيلاتس</button><button type="button" data-tab="3" aria-pressed="false">في المنزل</button></div>
     <ul class="feats rv"><li>ابحث حسب العضلة</li><li>مشغّل بملء الشاشة</li><li>مدرب صوتي</li><li>عدّاد التكرارات</li></ul>
@@ -178,26 +182,10 @@
   <div class="pair rv"><div class="phone tilt-a"><img src="/assets/img/ar/share.webp" alt="بطاقة قصص من E-PtAi بملخص تمرين كمثال" width="560" height="1195" loading="lazy" decoding="async"></div><div class="phone tilt-b"><img src="/assets/img/ar/friends.webp" alt="شاشة الأصدقاء في E-PtAi: رمز الدعوة وتحدي الأسبوع بأسماء على سبيل المثال" width="560" height="1195" loading="lazy" decoding="async"></div></div>
 </section>
 
-<section class="sec ai" id="ai-koc">
-  <div class="duo-head"><div class="tabs rv" role="group" data-seg><button type="button" data-pane="0" aria-pressed="true">المدرب الذكي</button><button type="button" data-pane="1" aria-pressed="false">استوديو الدروس الذكية</button><button type="button" data-pane="2" aria-pressed="false">درس ذكي فردي</button></div></div>
-  <div class="duo-body"><div class="pane ai-grid" data-pane="0"><div class="glass price rv">
-    <h2>المدرب الذكي</h2>
-    <p class="amount"><span dir="ltr">₺99.99</span><small>/شهريًا</small></p>
-    <p class="amount-y"><span class="or">أو</span> <span dir="ltr">₺719.99</span><small>/سنويًا</small></p>
-    <p class="say">اشتراك واحد. بلا فترة تجريبية. ابدأ مجانًا، تحرّك، وتابع تقدّمك!</p>
-    <ul class="ticks"><li>إجابات عامة عن التمرين والتغذية</li><li>إعادة بناء خطتك كل أسبوع</li><li>بلا إعلانات للمشتركين</li></ul>
-    <ul class="feats"><li>روبوت مدرب متحرك</li><li>مظهر نسائي ورجالي</li><li>11 لونًا للتصميم</li></ul>
-    <p class="note">الدفع عبر متجر التطبيقات فقط. قد يختلف السعر حسب البلد ويظهر في المتجر قبل الشراء. الإجابات معلومات عامة وليست نصيحة طبية.</p>
-  </div>
-  <div class="ai-pic rv">
-    <div class="phone "><img src="/assets/img/ar/ai-ask.webp" alt="شاشة اسأل الذكاء الاصطناعي في E-PtAi: مواضيع مقترحة" width="560" height="1195" loading="lazy" decoding="async"></div>
-    <div class="chars">
-      <figure><img src="/assets/img/lara-ai.webp" alt="Lara Volkova, شخصية أنشأها الذكاء الاصطناعي" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lara <b>AI</b></figcaption></figure>
-      <figure><img src="/assets/img/lukas-ai.webp" alt="Lukas Demirova, شخصية أنشأها الذكاء الاصطناعي" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lukas <b>AI</b></figcaption></figure>
-      <p>لارا ولوكاس شخصيتان من إنشاء الذكاء الاصطناعي في E-PtAi، وليسا شخصين حقيقيين ولا مدربين.</p>
-    </div>
-  </div></div><div class="pane" data-pane="1" hidden><div class="pane-text"><p class="say">دروس في ست فئات مبنية من مكتبة التمارين. تبدأ الدروس التي اكتملت مقاطعها، وتبقى الأخرى بعلامة قريبًا.</p><ul class="cats6"><li>لياقة</li><li>يوغا</li><li>بيلاتس</li><li>كارديو</li><li>قوة</li><li>إطالة</li></ul><p class="note">تتكوّن الدروس من مقاطع مكتبة التمارين.</p></div><div class="pane-pic"><div class="phone"><img src="/assets/img/ar/ai-studio.webp" alt="استوديو الدروس الذكية" width="560" height="1195" loading="lazy" decoding="async"></div></div></div><div class="pane" data-pane="2" hidden><div class="pane-text"><p class="soon rv">قريبًا</p><p class="say">الكاميرا مفتوحة، ودرس مباشر مع Lara أو Lukas. يتابع حركتك ويصحّح الخطأ ويحفّزك.</p><p class="note">قيد التطوير. غير مشمول في المدرب الذكي، وسيُباع بشكل منفصل.</p><p class="note">لارا ولوكاس شخصيتان من إنشاء الذكاء الاصطناعي في E-PtAi، وليسا شخصين حقيقيين ولا مدربين.</p></div>
-    <figure class="lesson-demo"><div class="phone demo-phone"><video muted loop playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="درس ذكي فردي" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="تشغيل" data-play="تشغيل" data-pause="إيقاف مؤقت"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="تشغيل الصوت" data-on="تشغيل الصوت" data-off="كتم الصوت"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg></button></div><figcaption>فيديو تصوري أُنشئ بالذكاء الاصطناعي. الميزة قيد التطوير.</figcaption><p class="note">عرض بالتركية: ترجمة الفيديو بالتركية.</p></figure></div></div>
+<section class="sec duo ai" id="dersler">
+  <div class="duo-head"><h2 class="rv">درس ذكي فردي</h2><div class="tabs rv" role="group" data-seg><button type="button" data-pane="0" aria-pressed="true">درس ذكي فردي</button><button type="button" data-pane="1" aria-pressed="false">استوديو الدروس الذكية</button></div></div>
+  <div class="duo-body"><div class="pane" data-pane="0"><div class="pane-text"><p class="soon rv">قريبًا</p><p class="say">الكاميرا مفتوحة، ودرس مباشر مع Lara أو Lukas. يتابع حركتك ويصحّح الخطأ ويحفّزك.</p><p class="note">قيد التطوير. غير مشمول في المدرب الذكي، وسيُباع بشكل منفصل.</p><p class="note">لارا ولوكاس شخصيتان من إنشاء الذكاء الاصطناعي في E-PtAi، وليسا شخصين حقيقيين ولا مدربين.</p></div>
+    <figure class="lesson-demo"><div class="phone demo-phone"><video data-lesson muted playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="درس ذكي فردي" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="تشغيل" data-play="تشغيل" data-pause="إيقاف مؤقت"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="تشغيل الصوت" data-on="تشغيل الصوت" data-off="كتم الصوت"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">تشغيل الصوت</span></button></div><p class="note">عرض بالتركية: ترجمة الفيديو بالتركية.</p></figure></div><div class="pane" data-pane="1" hidden><div class="pane-text"><p class="say">دروس في ست فئات مبنية من مكتبة التمارين. تبدأ الدروس التي اكتملت مقاطعها، وتبقى الأخرى بعلامة قريبًا.</p><ul class="cats6"><li>لياقة</li><li>يوغا</li><li>بيلاتس</li><li>كارديو</li><li>قوة</li><li>إطالة</li></ul><p class="note">تتكوّن الدروس من مقاطع مكتبة التمارين.</p></div><div class="pane-pic"><div class="phone"><img src="/assets/img/ar/ai-studio.webp" alt="استوديو الدروس الذكية" width="560" height="1195" loading="lazy" decoding="async"></div></div></div></div>
 </section>
 
 <section class="sec wd cine" id="saat-widget">
@@ -206,13 +194,6 @@
     <ul class="rows rv"><li>اختيار ودجت الشاشة الرئيسية<em class="soon">قريبًا</em></li><li>تذكيرات الحركة<em class="soon">معاينة</em></li></ul>
     <p class="badge rv">نستعد لتكامل الساعات الذكية.</p></div>
   <ul class="tiles rv"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span>دقائق</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4c2 0 3 2 3 5s-1 4-3 4-3-2-3-5 1-4 3-4zM15 11c2 0 3 2 3 4.5S17 20 15 20s-3-2-3-4.5 1-4.5 3-4.5z"/></svg><span>خطوات</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1 3.2 5.5 5.5 5.5 10.5a5.5 5.5 0 0 1-11 0c0-2.4 1.2-4 2.6-5.3.2 1.6 1 2.6 2.1 3.1.4-2.8.1-5.5.8-8.3z"/><path d="M12 19a2.5 2.5 0 0 1-2.5-2.5c0-1.4 1-2.2 2.5-3.8 1.5 1.6 2.5 2.4 2.5 3.8A2.5 2.5 0 0 1 12 19z"/></svg><span>سعرات</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/></svg><span>ماء</span></li></ul></div>
-</section>
-
-<section class="sec tg" id="egitmen-salon">
-  <div class="tg-head"><p class="soon rv">قريبًا</p><h2 class="rv">للمدربين والصالات</h2></div>
-  <div class="plans rv"><div class="glass plan-card"><h3>خطة المدرب</h3><p class="amount-s"><span dir="ltr">₺299</span><small>/شهر</small></p><p>الشهر الأول مجاني · 50 متدربًا نشطًا · +₺299 شهريًا لكل 50 إضافية</p></div><div class="glass plan-card"><h3>خطة الصالة</h3><p class="amount-s"><span dir="ltr">₺999</span><small>/شهر</small></p><p>الشهر الأول مجاني · 200 عضو نشط · +₺299 شهريًا لكل 200 إضافية</p></div></div>
-  <ul class="feats rv"><li>رمز QR للدخول يتجدد كل 30 ثانية</li><li>شاشة كشك عند الباب</li><li>مبيعات ومدفوعات Vitamin Bar</li><li>أدوار: عضو وموظف ومدير</li></ul>
-  <p class="note rv">تُصدر الفاتورة باسم المنشأة. تطبيق منفصل: E-PtAi Salon.</p>
 </section>
 
 <section class="sec faq" id="sss">
@@ -232,6 +213,33 @@
     <details class="rv"><summary>ما هي نمشي في 81 ولاية؟</summary><p>مسابقة ولايات قائمة على المشي: تبدأ في 30 ولاية كبرى، وكل أسبوع يحصل المركز الأول الموثّق في كل ولاية على شهر مجاني من المدرب الذكي. قريبًا؛ لم تُفتح بعد.</p></details>
     <details class="rv"><summary>هل هناك ما يناسب المدربين والصالات؟</summary><p>نعم، قيد الإعداد كتطبيق منفصل بخطط منفصلة. قريبًا؛ تُصدر الفاتورة باسم المنشأة.</p></details>
   </div>
+</section>
+
+<section class="sec ai" id="ai-koc">
+  <div class="pane ai-grid"><div class="glass price rv">
+    <h2>المدرب الذكي</h2>
+    <p class="amount"><span dir="ltr">₺99.99</span><small>/شهريًا</small></p>
+    <p class="amount-y"><span class="or">أو</span> <span dir="ltr">₺719.99</span><small>/سنويًا</small></p>
+    <p class="say">اشتراك واحد. بلا فترة تجريبية. ابدأ مجانًا، تحرّك، وتابع تقدّمك!</p>
+    <ul class="ticks"><li>إجابات عامة عن التمرين والتغذية</li><li>إعادة بناء خطتك كل أسبوع</li><li>بلا إعلانات للمشتركين</li></ul>
+    <ul class="feats"><li>روبوت مدرب متحرك</li><li>مظهر نسائي ورجالي</li><li>11 لونًا للتصميم</li></ul>
+    <p class="note">الدفع عبر متجر التطبيقات فقط. قد يختلف السعر حسب البلد ويظهر في المتجر قبل الشراء. الإجابات معلومات عامة وليست نصيحة طبية.</p>
+  </div>
+  <div class="ai-pic rv">
+    <figure class="lesson-demo"><div class="phone demo-phone"><video data-lesson muted playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="درس ذكي فردي" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="تشغيل" data-play="تشغيل" data-pause="إيقاف مؤقت"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="تشغيل الصوت" data-on="تشغيل الصوت" data-off="كتم الصوت"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">تشغيل الصوت</span></button></div><p class="note lesson-note"><b>درس ذكي فردي · قريبًا.</b> غير مشمول في المدرب الذكي، وسيُباع بشكل منفصل.</p><p class="note">عرض بالتركية: ترجمة الفيديو بالتركية.</p></figure>
+    <div class="chars">
+      <figure><img src="/assets/img/lara-ai.webp" alt="Lara Volkova, شخصية أنشأها الذكاء الاصطناعي" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lara <b>AI</b></figcaption></figure>
+      <figure><img src="/assets/img/lukas-ai.webp" alt="Lukas Demirova, شخصية أنشأها الذكاء الاصطناعي" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lukas <b>AI</b></figcaption></figure>
+      <p>لارا ولوكاس شخصيتان من إنشاء الذكاء الاصطناعي في E-PtAi، وليسا شخصين حقيقيين ولا مدربين.</p>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec tg" id="egitmen-salon">
+  <div class="tg-head"><p class="soon rv">قريبًا</p><h2 class="rv">للمدربين والصالات</h2></div>
+  <div class="plans rv"><div class="glass plan-card"><h3>خطة المدرب</h3><p class="amount-s"><span dir="ltr">₺299</span><small>/شهر</small></p><p>الشهر الأول مجاني · 50 متدربًا نشطًا · +₺299 شهريًا لكل 50 إضافية</p></div><div class="glass plan-card"><h3>خطة الصالة</h3><p class="amount-s"><span dir="ltr">₺999</span><small>/شهر</small></p><p>الشهر الأول مجاني · 200 عضو نشط · +₺299 شهريًا لكل 200 إضافية</p></div></div>
+  <ul class="feats rv"><li>رمز QR للدخول يتجدد كل 30 ثانية</li><li>شاشة كشك عند الباب</li><li>مبيعات ومدفوعات Vitamin Bar</li><li>أدوار: عضو وموظف ومدير</li></ul>
+  <p class="note rv">تُصدر الفاتورة باسم المنشأة. تطبيق منفصل: E-PtAi Salon.</p>
 </section>
 </main>
 <footer class="foot">

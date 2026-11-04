@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>E-PtAi – Antrenman, Beslenme ve AI Koç Tek Uygulamada</title>
-<meta name="description" content="E-PtAi; 333 hareket videosu, takip dersleri, kişisel plan, beslenme ve AI Koç'u tek uygulamada toplar. App Store ve Google Play'de yakında.">
+<meta name="description" content="E-PtAi; 1000 hareket videosu, takip dersleri, kişisel plan, beslenme ve AI Koç'u tek uygulamada toplar. App Store ve Google Play'de yakında.">
 <meta name="theme-color" content="#040A0C">
 <link rel="canonical" href="https://www.e-ptai.com/">
 <link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="https://www.e-ptai.com/">
 <meta property="og:title" content="E-PtAi – Antrenman, Beslenme ve AI Koç Tek Uygulamada">
-<meta property="og:description" content="E-PtAi; 333 hareket videosu, takip dersleri, kişisel plan, beslenme ve AI Koç'u tek uygulamada toplar. App Store ve Google Play'de yakında.">
+<meta property="og:description" content="E-PtAi; 1000 hareket videosu, takip dersleri, kişisel plan, beslenme ve AI Koç'u tek uygulamada toplar. App Store ve Google Play'de yakında.">
 <meta property="og:image" content="https://www.e-ptai.com/assets/img/og-tr.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -27,6 +27,7 @@
 <link rel="icon" href="/assets/img/icon-64.png" type="image/png">
 <link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/video/ai-lesson-demo.webp" as="image">
 <link rel="stylesheet" href="/assets/site.css">
 <script>document.documentElement.classList.add('js');try{if(localStorage.getItem('e-theme')==='logo')document.documentElement.dataset.theme='logo'}catch(e){}try{if(sessionStorage.getItem('e-intro'))document.documentElement.classList.add('no-intro');else sessionStorage.setItem('e-intro','1')}catch(e){}</script>
 <script defer src="/assets/site.js" onerror="document.documentElement.classList.remove('js')"></script>
@@ -56,27 +57,30 @@
       <div class="light" aria-hidden="true"></div>
       <div class="pedestal" aria-hidden="true"></div>
       <div class="ring">
-        <figure class="ph" data-i="0"><div class="bob"><div class="phone "><img src="/assets/img/tr/dashboard.webp" alt="E-PtAi ana sayfa ekranı: AI Koç kartı, hedef kilo, günlük takip ve öğün planı" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
-        <figure class="ph" data-i="1"><div class="bob"><div class="phone "><img src="/assets/img/tr/workout.webp" alt="E-PtAi antrenman ekranı: bugünün hareketleri ve Antrenmanı Başlat düğmesi" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
-        <figure class="ph" data-i="2"><div class="bob"><div class="phone "><img src="/assets/img/tr/class-run.webp" alt="E-PtAi takip dersi ekranı: tam ekran hareket videosu ve geri sayım" width="560" height="1195" fetchpriority="high" decoding="sync"></div></div></figure>
+        <figure class="ph vid" data-i="0"><div class="bob"><div class="phone"><video data-lesson muted playsinline preload="none" poster="/assets/video/ai-lesson-demo.webp" width="720" height="1280" aria-label="Birebir AI ders"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div></div></figure>
+        <figure class="ph" data-i="0"><div class="bob"><div class="phone "><img src="/assets/img/tr/dashboard.webp" alt="E-PtAi ana sayfa ekranı: AI Koç kartı, hedef kilo, günlük takip ve öğün planı" width="560" height="1195" decoding="sync"></div></div></figure>
+        <figure class="ph" data-i="1"><div class="bob"><div class="phone "><img src="/assets/img/tr/workout.webp" alt="E-PtAi antrenman ekranı: bugünün hareketleri ve Antrenmanı Başlat düğmesi" width="560" height="1195" decoding="sync"></div></div></figure>
+        <figure class="ph" data-i="2"><div class="bob"><div class="phone "><img src="/assets/img/tr/class-run.webp" alt="E-PtAi takip dersi ekranı: tam ekran hareket videosu ve geri sayım" width="560" height="1195" decoding="sync"></div></div></figure>
         <figure class="ph" data-i="3"><div class="bob"><div class="phone "><img src="/assets/img/tr/ranks.webp" alt="E-PtAi Güç Skoru ekranı: Granit rütbesi ve on rütbenin kalkanları" width="560" height="1195" loading="lazy" decoding="sync"></div></div></figure>
         <figure class="ph" data-i="4"><div class="bob"><div class="phone "><img src="/assets/img/tr/plan.webp" alt="E-PtAi Planın hazır ekranı: hedef grafiği, program ve günlük kalori" width="560" height="1195" loading="lazy" decoding="sync"></div></div></figure>
       </div>
+      <p class="welcome-cap" hidden>E-PtAi'ye hoş geldin. Senin dijital özel PT'in olacak. Bu uygulama hayatını değiştirecek. Yeni bir sen için indir.</p>
+      <div class="hero-vctl"><div class="vctl" role="group"><button type="button" class="v-play" aria-label="Oynat" data-play="Oynat" data-pause="Durdur"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Sesi aç" data-on="Sesi aç" data-off="Sesi kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">Sesi aç</span></button></div></div>
       <button class="arrow prev" type="button" aria-label="Önceki ekran"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
       <button class="arrow next" type="button" aria-label="Sonraki ekran"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
     <div class="ctl-row">
-      <p class="cap" aria-live="polite">Ana sayfa</p>
+      <p class="cap" aria-live="polite">Birebir AI ders · Yakında</p>
       <div class="track" aria-hidden="true"><span></span></div>
       <button class="auto" type="button" aria-label="Otomatik geçişi durdur" data-pause="Otomatik geçişi durdur" data-play="Otomatik geçişi başlat"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-pause" d="M8 5v14M16 5v14"/><path class="ic-play" d="M8 5l11 7-11 7z"/></svg></button>
     </div>
-    <template id="caps"><i>Ana sayfa</i><i>Antrenman</i><i>Takip Dersi</i><i>Güç Skoru</i><i>Planın hazır</i></template>
+    <template id="caps"><i>Birebir AI ders · Yakında</i><i>Ana sayfa</i><i>Antrenman</i><i>Takip Dersi</i><i>Güç Skoru</i><i>Planın hazır</i></template>
   </div>
 </section>
 
 <section class="sec lib" id="hareketler">
   <div class="lib-text">
-    <h2 class="rv">333 hareket videosu</h2>
+    <h2 class="rv">1000 hareket videosu</h2>
     <p class="say rv">Her hareketi izle, sonra birlikte yap.</p>
     <div class="tabs rv" role="group" aria-label="Dal seç"><button type="button" data-tab="0" aria-pressed="true">Fitness</button><button type="button" data-tab="1" aria-pressed="false">Yoga</button><button type="button" data-tab="2" aria-pressed="false">Pilates</button><button type="button" data-tab="3" aria-pressed="false">Evde</button></div>
     <ul class="feats rv"><li>Kasa göre bul</li><li>Tam ekran oynatıcı</li><li>Sesli koç</li><li>Tekrar sayacı</li></ul>
@@ -179,26 +183,10 @@
   <div class="pair rv"><div class="phone tilt-a"><img src="/assets/img/tr/share.webp" alt="E-PtAi hikâye paylaşım kartı, örnek antrenman özeti" width="560" height="1195" loading="lazy" decoding="async"></div><div class="phone tilt-b"><img src="/assets/img/tr/friends.webp" alt="E-PtAi Arkadaşlar ekranı: davet kodu ve haftalık düello, örnek isimlerle" width="560" height="1195" loading="lazy" decoding="async"></div></div>
 </section>
 
-<section class="sec ai" id="ai-koc">
-  <div class="duo-head"><div class="tabs rv" role="group" data-seg><button type="button" data-pane="0" aria-pressed="true">AI Koç</button><button type="button" data-pane="1" aria-pressed="false">AI Ders Stüdyosu</button><button type="button" data-pane="2" aria-pressed="false">Birebir AI ders</button></div></div>
-  <div class="duo-body"><div class="pane ai-grid" data-pane="0"><div class="glass price rv">
-    <h2>AI Koç</h2>
-    <p class="amount"><span dir="ltr">₺99,99</span><small>/ay</small></p>
-    <p class="amount-y"><span class="or">ya da</span> <span dir="ltr">₺719,99</span><small>/yıl</small></p>
-    <p class="say">Tek abonelik. Deneme yok. Ücretsiz başla, hareket et, gelişimini takip et!</p>
-    <ul class="ticks"><li>Antrenman ve beslenme sorularına genel bilgi</li><li>Planın her hafta yeniden kurulur</li><li>AI Koç üyelerine reklam yok</li></ul>
-    <ul class="feats"><li>Animasyonlu koç robotu</li><li>Kadın ve erkek görünümü</li><li>11 renk teması</li></ul>
-    <p class="note">Ödeme yalnız uygulama mağazası üzerinden. Fiyat ülkeye göre değişebilir; satın almadan önce mağazada gösterilir. Yanıtlar genel bilgidir, tıbbi tavsiye değildir.</p>
-  </div>
-  <div class="ai-pic rv">
-    <div class="phone "><img src="/assets/img/tr/ai-ask.webp" alt="E-PtAi AI'ye Sor ekranı: hazır soru başlıkları" width="560" height="1195" loading="lazy" decoding="async"></div>
-    <div class="chars">
-      <figure><img src="/assets/img/lara-ai.webp" alt="Lara Volkova, yapay zekâ ile üretilmiş karakter" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lara <b>AI</b></figcaption></figure>
-      <figure><img src="/assets/img/lukas-ai.webp" alt="Lukas Demirova, yapay zekâ ile üretilmiş karakter" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lukas <b>AI</b></figcaption></figure>
-      <p>Lara ve Lukas, E-PtAi'nin yapay zekâ karakterleridir; gerçek kişi ya da eğitmen değildir.</p>
-    </div>
-  </div></div><div class="pane" data-pane="1" hidden><div class="pane-text"><p class="say">Altı kategoride, hareket kütüphanesinden hazırlanmış dersler. Klibi hazır olan dersler başlatılır; diğerleri Yakında etiketiyle bekler.</p><ul class="cats6"><li>Fitness</li><li>Yoga</li><li>Pilates</li><li>Kardiyo</li><li>Kuvvet</li><li>Esneme</li></ul><p class="note">Dersler hareket kütüphanesindeki kliplerden oluşur.</p></div><div class="pane-pic"><div class="phone"><img src="/assets/img/tr/ai-studio.webp" alt="AI Ders Stüdyosu" width="560" height="1195" loading="lazy" decoding="async"></div></div></div><div class="pane" data-pane="2" hidden><div class="pane-text"><p class="soon rv">Yakında</p><p class="say">Kamera açık, Lara veya Lukas ile karşılıklı ders. Hareketini takip eder, yanlışı düzeltir, motive eder.</p><p class="note">Geliştirme aşamasında. AI Koç’a dahil değil, ayrı satılacak.</p><p class="note">Lara ve Lukas, E-PtAi'nin yapay zekâ karakterleridir; gerçek kişi ya da eğitmen değildir.</p></div>
-    <figure class="lesson-demo"><div class="phone demo-phone"><video muted loop playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="Birebir AI ders" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="Oynat" data-play="Oynat" data-pause="Durdur"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Sesi aç" data-on="Sesi aç" data-off="Sesi kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg></button></div><figcaption>Konsept video, yapay zekâ ile üretildi. Özellik geliştirme aşamasında.</figcaption><p class="note">Türkçe gösterim: videonun altyazısı Türkçedir.</p></figure></div></div>
+<section class="sec duo ai" id="dersler">
+  <div class="duo-head"><h2 class="rv">Birebir AI ders</h2><div class="tabs rv" role="group" data-seg><button type="button" data-pane="0" aria-pressed="true">Birebir AI ders</button><button type="button" data-pane="1" aria-pressed="false">AI Ders Stüdyosu</button></div></div>
+  <div class="duo-body"><div class="pane" data-pane="0"><div class="pane-text"><p class="soon rv">Yakında</p><p class="say">Kamera açık, Lara veya Lukas ile karşılıklı ders. Hareketini takip eder, yanlışı düzeltir, motive eder.</p><p class="note">Geliştirme aşamasında. AI Koç’a dahil değil, ayrı satılacak.</p><p class="note">Lara ve Lukas, E-PtAi'nin yapay zekâ karakterleridir; gerçek kişi ya da eğitmen değildir.</p></div>
+    <figure class="lesson-demo"><div class="phone demo-phone"><video data-lesson muted playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="Birebir AI ders" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="Oynat" data-play="Oynat" data-pause="Durdur"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Sesi aç" data-on="Sesi aç" data-off="Sesi kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">Sesi aç</span></button></div><p class="note">Türkçe gösterim: videonun altyazısı Türkçedir.</p></figure></div><div class="pane" data-pane="1" hidden><div class="pane-text"><p class="say">Altı kategoride, hareket kütüphanesinden hazırlanmış dersler. Klibi hazır olan dersler başlatılır; diğerleri Yakında etiketiyle bekler.</p><ul class="cats6"><li>Fitness</li><li>Yoga</li><li>Pilates</li><li>Kardiyo</li><li>Kuvvet</li><li>Esneme</li></ul><p class="note">Dersler hareket kütüphanesindeki kliplerden oluşur.</p></div><div class="pane-pic"><div class="phone"><img src="/assets/img/tr/ai-studio.webp" alt="AI Ders Stüdyosu" width="560" height="1195" loading="lazy" decoding="async"></div></div></div></div>
 </section>
 
 <section class="sec wd cine" id="saat-widget">
@@ -207,13 +195,6 @@
     <ul class="rows rv"><li>Ana ekran widget seçimi<em class="soon">Yakında</em></li><li>Hareket hatırlatmaları<em class="soon">Önizleme</em></li></ul>
     <p class="badge rv">Akıllı Saat Entegrasyonları İçin Hazırlanıyor.</p></div>
   <ul class="tiles rv"><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg><span>Dakika</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4c2 0 3 2 3 5s-1 4-3 4-3-2-3-5 1-4 3-4zM15 11c2 0 3 2 3 4.5S17 20 15 20s-3-2-3-4.5 1-4.5 3-4.5z"/></svg><span>Adım</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c1 3.2 5.5 5.5 5.5 10.5a5.5 5.5 0 0 1-11 0c0-2.4 1.2-4 2.6-5.3.2 1.6 1 2.6 2.1 3.1.4-2.8.1-5.5.8-8.3z"/><path d="M12 19a2.5 2.5 0 0 1-2.5-2.5c0-1.4 1-2.2 2.5-3.8 1.5 1.6 2.5 2.4 2.5 3.8A2.5 2.5 0 0 1 12 19z"/></svg><span>Kalori</span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/></svg><span>Su</span></li></ul></div>
-</section>
-
-<section class="sec tg" id="egitmen-salon">
-  <div class="tg-head"><p class="soon rv">Yakında</p><h2 class="rv">Eğitmen ve Salon</h2></div>
-  <div class="plans rv"><div class="glass plan-card"><h3>Eğitmen planı</h3><p class="amount-s"><span dir="ltr">₺299</span><small>/ay</small></p><p>İlk ay ücretsiz · 50 aktif öğrenci · her ek 50 öğrenci için +₺299/ay</p></div><div class="glass plan-card"><h3>Salon planı</h3><p class="amount-s"><span dir="ltr">₺999</span><small>/ay</small></p><p>İlk ay ücretsiz · 200 aktif üye · her ek 200 üye için +₺299/ay</p></div></div>
-  <ul class="feats rv"><li>30 saniyede yenilenen giriş QR’ı</li><li>Kapı kiosku</li><li>Vitamin Bar satış ve ödemeleri</li><li>Üye, personel ve yönetici rolleri</li></ul>
-  <p class="note rv">Fatura kuruma kesilir. Ayrı uygulama: E-PtAi Salon.</p>
 </section>
 
 <section class="sec faq" id="sss">
@@ -233,6 +214,33 @@
     <details class="rv"><summary>81 İlde Yürüyoruz nedir?</summary><p>Yürüyüşe dayalı il yarışması: ilk etapta 30 büyükşehirde başlıyor, her hafta her ilin doğrulanmış birincisi 1 aylık ücretsiz AI Koç üyeliği kazanıyor. Yakında; henüz açık değil.</p></details>
     <details class="rv"><summary>Eğitmen ve salonlar için var mı?</summary><p>Evet, ayrı bir uygulama ve ayrı planlarla hazırlanıyor. Yakında; fatura kuruma kesilir.</p></details>
   </div>
+</section>
+
+<section class="sec ai" id="ai-koc">
+  <div class="pane ai-grid"><div class="glass price rv">
+    <h2>AI Koç</h2>
+    <p class="amount"><span dir="ltr">₺99,99</span><small>/ay</small></p>
+    <p class="amount-y"><span class="or">ya da</span> <span dir="ltr">₺719,99</span><small>/yıl</small></p>
+    <p class="say">Tek abonelik. Deneme yok. Ücretsiz başla, hareket et, gelişimini takip et!</p>
+    <ul class="ticks"><li>Antrenman ve beslenme sorularına genel bilgi</li><li>Planın her hafta yeniden kurulur</li><li>AI Koç üyelerine reklam yok</li></ul>
+    <ul class="feats"><li>Animasyonlu koç robotu</li><li>Kadın ve erkek görünümü</li><li>11 renk teması</li></ul>
+    <p class="note">Ödeme yalnız uygulama mağazası üzerinden. Fiyat ülkeye göre değişebilir; satın almadan önce mağazada gösterilir. Yanıtlar genel bilgidir, tıbbi tavsiye değildir.</p>
+  </div>
+  <div class="ai-pic rv">
+    <figure class="lesson-demo"><div class="phone demo-phone"><video data-lesson muted playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture preload="none" poster="/assets/video/ai-lesson-demo.webp" aria-label="Birebir AI ders" width="720" height="1280"><source src="/assets/video/ai-lesson-demo.mp4" type="video/mp4"></video></div><div class="vctl"><button type="button" class="v-play" aria-label="Oynat" data-play="Oynat" data-pause="Durdur"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-play" d="M8 5l11 7-11 7z"/><path class="ic-pause" d="M8 5v14M16 5v14"/></svg></button><button type="button" class="v-snd" aria-label="Sesi aç" data-on="Sesi aç" data-off="Sesi kapat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="ic-wave" d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg><span class="v-lbl">Sesi aç</span></button></div><p class="note lesson-note"><b>Birebir AI ders · Yakında.</b> AI Koç’a dahil değil, ayrı satılacak.</p><p class="note">Türkçe gösterim: videonun altyazısı Türkçedir.</p></figure>
+    <div class="chars">
+      <figure><img src="/assets/img/lara-ai.webp" alt="Lara Volkova, yapay zekâ ile üretilmiş karakter" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lara <b>AI</b></figcaption></figure>
+      <figure><img src="/assets/img/lukas-ai.webp" alt="Lukas Demirova, yapay zekâ ile üretilmiş karakter" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lukas <b>AI</b></figcaption></figure>
+      <p>Lara ve Lukas, E-PtAi'nin yapay zekâ karakterleridir; gerçek kişi ya da eğitmen değildir.</p>
+    </div>
+  </div></div>
+</section>
+
+<section class="sec tg" id="egitmen-salon">
+  <div class="tg-head"><p class="soon rv">Yakında</p><h2 class="rv">Eğitmen ve Salon</h2></div>
+  <div class="plans rv"><div class="glass plan-card"><h3>Eğitmen planı</h3><p class="amount-s"><span dir="ltr">₺299</span><small>/ay</small></p><p>İlk ay ücretsiz · 50 aktif öğrenci · her ek 50 öğrenci için +₺299/ay</p></div><div class="glass plan-card"><h3>Salon planı</h3><p class="amount-s"><span dir="ltr">₺999</span><small>/ay</small></p><p>İlk ay ücretsiz · 200 aktif üye · her ek 200 üye için +₺299/ay</p></div></div>
+  <ul class="feats rv"><li>30 saniyede yenilenen giriş QR’ı</li><li>Kapı kiosku</li><li>Vitamin Bar satış ve ödemeleri</li><li>Üye, personel ve yönetici rolleri</li></ul>
+  <p class="note rv">Fatura kuruma kesilir. Ayrı uygulama: E-PtAi Salon.</p>
 </section>
 </main>
 <footer class="foot">
