@@ -141,6 +141,11 @@
     var WELCOME = window.__WELCOME !== undefined ? window.__WELCOME : true;
     var vids = lessonVideos, userMuted = false, wa = null, welcomeDone = false, busy = false, heroOn = false;
     var hv = heroVid, wcap = $('.welcome-cap');
+    // The voice (welcome line and the lesson video's sound) plays once per visit (tab session): after the first spoken round every video is muted.
+    function markVoice() { try { sessionStorage.setItem('e-voice', '1'); } catch (e) {} }
+    try { if (sessionStorage.getItem('e-voice')) { userMuted = true; welcomeDone = true; } } catch (e) {}
+    // A spoken round that ends or is cut short (page change) is over: back to muted.
+    function hush(v) { if (!v.muted) { userMuted = true; v.muted = true; } }
     window.__lesson = { busy: function () { return busy; }, vids: vids, wa: function () { return wa; } };
     function ctl(v) { return v.closest('.lesson-demo') || $('.hero-vctl'); }
     function sync(v) {
@@ -167,7 +172,7 @@
       if (!wa) {
         wa = new Audio('/assets/audio/welcome-' + (root.lang || 'tr') + '.mp3'); wa.preload = 'auto';
         wa.addEventListener('ended', finish);
-        wa.addEventListener('playing', function () { if (wcap) wcap.hidden = false; });
+        wa.addEventListener('playing', function () { markVoice(); if (wcap) wcap.hidden = false; });
         wa.addEventListener('error', function () { welcomeDone = true; busy = false; hideCap(); start(hv, true); });
       }
       busy = true; hv.pause(); hv.currentTime = 0; wa.currentTime = 0;
@@ -188,11 +193,18 @@
         vids.forEach(sync);
       });
       ['play', 'pause', 'ended', 'volumechange'].forEach(function (t) { v.addEventListener(t, function () { sync(v); }); });
+      v.addEventListener('playing', function () { if (!v.muted) markVoice(); });
+      // End of a round: sound off for good (until the button is pressed again), then keep going silently like a loop.
+      v.addEventListener('ended', function () {
+        hush(v); sync(v);
+        if (v._user || (v === hv && busy)) return;
+        v.currentTime = 0; var q = v.play(); if (q) q.catch(function () {});
+      });
       v.addEventListener('play', function () { vids.forEach(function (o) { if (o !== v) o.pause(); }); });
       new IntersectionObserver(function (es) {
         var on = es[0].isIntersecting;
-        if (v === hv) { heroOn = on; if (!on && wa && busy) { wa.pause(); busy = false; hideCap(); } }
-        if (!on) { v.pause(); return; }
+        if (v === hv) { heroOn = on; if (!on && wa && busy) { wa.pause(); busy = false; welcomeDone = true; hideCap(); } }
+        if (!on) { v.pause(); hush(v); sync(v); return; }
         if (v === hv && playWelcome()) return;
         start(v);
       }, { threshold: .4 }).observe(v);
@@ -209,7 +221,7 @@
     ['pointerdown', 'pointerup', 'touchend', 'keydown', 'click'].forEach(function (t) { document.addEventListener(t, unlock, { capture: true, passive: true }); });
     root.addEventListener('heroslide', function (e) {
       if (!hv) return;
-      if (e.detail !== 0) { hv.pause(); if (wa && busy) { wa.pause(); busy = false; hideCap(); } }
+      if (e.detail !== 0) { hv.pause(); hush(hv); if (wa && busy) { wa.pause(); busy = false; welcomeDone = true; hideCap(); } }
       else if (heroOn) { if (!playWelcome()) start(hv); }
     });
     document.addEventListener('visibilitychange', function () { if (document.hidden) { vids.forEach(function (v) { v.pause(); }); if (wa && busy) { wa.pause(); busy = false; hideCap(); } } });

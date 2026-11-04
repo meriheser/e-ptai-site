@@ -677,3 +677,15 @@ h1{font-size:clamp(2rem,1.4rem + 2.6vw,3.75rem);line-height:1.08}
   .js .fan .phone{height:auto;width:min(30%,calc((100dvh - 240px)*.4686))}
 }
 @media (max-width:979px){.crop img{object-position:50% 71%}}
+
+#ai-koc .lesson-note b{font-size:1rem;font-weight:800}#ai-koc .lesson-note em.soon{margin-inline-start:0;margin-inline-end:6px}
+
+.ai-left{display:grid;gap:14px;align-content:center;min-width:0}
+.lessons h3{font-size:clamp(1.25rem,1.05rem + .8vw,1.75rem);font-weight:800;letter-spacing:-.01em;line-height:1.15;text-shadow:var(--title-glow)}
+.lessons em.soon{margin:8px 0 0;display:inline-block}
+.lp{display:grid;gap:8px;margin-top:12px}
+.lp li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px solid rgba(var(--cyc),.18)}
+.lp span{font-weight:700;color:var(--soft)}
+.lp b{font-size:clamp(1.5rem,1.2rem + 1.2vw,2.25rem);font-weight:800;letter-spacing:-.02em;color:var(--cy);text-shadow:0 0 10px rgba(var(--cyc),.5)}
+.lessons .note{margin-top:12px;font-size:.875rem}
+@media (min-width:980px){.ai-left{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}}
