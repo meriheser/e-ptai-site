@@ -237,7 +237,7 @@
   })();
 
   // Pages sit side by side, so native lazy loading can miss them: once the first screen is done, load every picture.
-  addEventListener('load', function () { setTimeout(function () { $$('img[loading=lazy]').forEach(function (i) { i.loading = 'eager'; }); }, 400); });
+  addEventListener('load', function () { setTimeout(function () { $$('img').forEach(function (i) { i.loading = 'eager'; if (i.decode) i.decode().catch(function () {}); }); }, 400); });
 
   if (!('IntersectionObserver' in window)) return;
   new IntersectionObserver(function (es) {

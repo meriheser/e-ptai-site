@@ -4,7 +4,7 @@
 @font-face{font-family:Cairo;src:url(/assets/fonts/cairo-arabic.woff2) format("woff2");font-weight:200 900;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
 :root{--cyc:46,230,234;--cbc:127,246,255;--bgc:4,10,12;--bg2c:6,19,22;--gc:16,44,50;--gc2:10,29,32;--emc:0,229,160;--d2:#071114;--d3:#0d2a2c;--on:#04282b;
   --bg:#040A0C;--bg2:#071417;--ink:#EEF9FA;--soft:#B4CDD1;
-  --brand-ai:#2EE6EA;--cy:#2EE6EA;--cy-d:#14B8C4;--cy-b:#7FF6FF;--em:#00E5A0;
+  --brand-ai:#00F57A;--cy:#2EE6EA;--cy-d:#14B8C4;--cy-b:#7FF6FF;--em:#00E5A0;
   --edge:rgba(46,230,234,.32);--glass:rgba(var(--gc),.5);
   --m:clamp(16px,3vw,44px);
   --ease:cubic-bezier(.22,1,.36,1);
