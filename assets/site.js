@@ -29,7 +29,7 @@
   var stage = $('.stage'), phones = $$('.ph'), fill = $('.track span'), cap = $('.cap'), autoBtn = $('.auto');
   var caps = $$('i', $('#caps').content), heroVid = $('.ph video');
   var n = phones.length, pos = 0, target = 0, active = 0, w = 200, narrow = false;
-  var STEP = 3500, playing = !still, hold = false, t0 = performance.now(), elapsed = 0, seen = true, raf = 0;
+  var STEP = 3500, playing = true, hold = false, t0 = performance.now(), elapsed = 0, seen = true, raf = 0;
 
   function measure() { w = phones[phones.length > 1 ? 1 : 0].offsetWidth; narrow = innerWidth < 760; }
   function apply() {
@@ -61,7 +61,7 @@
     pos = still ? target : pos + (target - pos) * (1 - Math.exp(-dt / 130));
     if (Math.abs(target - pos) < .001) pos = target;
     apply(); bar();
-    if (!still || pos !== target) raf = requestAnimationFrame(frame);
+    raf = requestAnimationFrame(frame);
   }
   function wake() { if (!raf) { t0 = performance.now(); raf = requestAnimationFrame(frame); } }
   function go(by) { target = Math.round(target) + by; elapsed = 0; wake(); }
@@ -106,7 +106,6 @@
   stage.addEventListener('pointercancel', end);
   addEventListener('resize', function () { measure(); apply(); });
   measure(); apply(); bar();
-  if (still) setPlaying(false);
 
   // Move library tabs: thumbs and the phone's clip follow the chosen style.
   var video = $('.clip-phone video'), clips = video.dataset.clips.split(',');
@@ -118,7 +117,7 @@
       video.poster = '/assets/img/clips/' + clips[i] + '.webp';
       $('source', video).src = '/assets/img/clips/' + clips[i] + '.mp4';
       video.load();
-      if (!still) { var p = video.play(); if (p) p.catch(function () {}); }
+      var p = video.play(); if (p) p.catch(function () {});
     });
   });
 
@@ -151,7 +150,7 @@
       sn.classList.toggle('need', v.muted && !userMuted && !v.paused);
     }
     function start(v, fromZero) {
-      if (still || v._user || document.hidden || (v === hv && busy)) return;
+      if (v._user || document.hidden || (v === hv && busy)) return;
       if (v.ended || fromZero) v.currentTime = 0;
       vids.forEach(function (o) { if (o !== v) o.pause(); });
       v.volume = 1; v.muted = userMuted;
@@ -164,7 +163,7 @@
     function hideCap() { if (wcap) wcap.hidden = true; }
     function finish() { welcomeDone = true; busy = false; hideCap(); hv._user = false; start(hv, true); }
     function playWelcome() {
-      if (!WELCOME || welcomeDone || still || !hv || (wa && busy)) return false;
+      if (!WELCOME || welcomeDone || !hv || (wa && busy)) return false;
       if (!wa) {
         wa = new Audio('/assets/audio/welcome-' + (root.lang || 'tr') + '.mp3'); wa.preload = 'auto';
         wa.addEventListener('ended', finish);
@@ -202,9 +201,9 @@
     // The first touch, click or key: the sound comes on (the welcome voice first on the first page); the click itself is left alone.
     function unlock(e) {
       if (done || (e.target.closest && e.target.closest('.vctl'))) return;
-      if (hv && heroOn && WELCOME && !welcomeDone && !still) { done = true; playWelcome(); return; }
+      if (hv && heroOn && WELCOME && !welcomeDone) { done = true; playWelcome(); return; }
       var v = vids.filter(function (x) { return !x.paused && x.muted; })[0];
-      if (v && !userMuted && !still) { done = true; v.muted = false; v.volume = 1; v.currentTime = 0; var p = v.play(); if (p) p.catch(function () { v.muted = true; v.play(); done = false; }); sync(v); }
+      if (v && !userMuted) { done = true; v.muted = false; v.volume = 1; v.currentTime = 0; var p = v.play(); if (p) p.catch(function () { v.muted = true; v.play(); done = false; }); sync(v); }
     }
     var done = false;
     ['pointerdown', 'pointerup', 'touchend', 'keydown', 'click'].forEach(function (t) { document.addEventListener(t, unlock, { capture: true, passive: true }); });
@@ -232,7 +231,6 @@
     var nav = document.createElement('nav'); nav.className = 'pager'; nav.setAttribute('aria-label', document.title);
     nav.innerHTML = '<button type="button" class="pg-prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><span class="pg-n" aria-live="polite"></span><button type="button" class="pg-auto"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-pause" d="M8 5v14M16 5v14"/><path class="ic-play" d="M8 5l11 7-11 7z"/></svg></button><button type="button" class="pg-next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>';
     document.body.appendChild(nav);
-    var sweep = document.createElement('i'); sweep.className = 'sweep'; sweep.setAttribute('aria-hidden', 'true'); document.body.appendChild(sweep);
     var pv = $('.pg-prev', nav), nx = $('.pg-next', nav), num = $('.pg-n', nav);
     pv.setAttribute('aria-label', $('.arrow.prev').getAttribute('aria-label'));
     nx.setAttribute('aria-label', $('.arrow.next').getAttribute('aria-label'));
@@ -255,7 +253,7 @@
     });
     setInterval(function () {
       if (cur !== seenCur) { seenCur = cur; shownAt = Date.now(); }
-      if (!playing || still || document.hidden || cur === panels.length - 1 || Date.now() - userAt < 20000) return;
+      if (!playing || document.hidden || cur === panels.length - 1 || Date.now() - userAt < 20000) return;
       var p = panels[cur], tall = p.scrollHeight > p.clientHeight + 2;
       var need = cur === 0 ? 14000 : tall ? 16000 : 9000, held = Date.now() - shownAt;
       var lv = window.__lesson && window.__lesson.vids.filter(function (v) { return p.contains(v) && v.offsetParent; })[0];
@@ -276,7 +274,7 @@
     pv.addEventListener('click', function () { to(cur - 1); });
     nx.addEventListener('click', function () { to(cur + 1); });
     var pio = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { var was = cur; cur = panels.indexOf(e.target); paint(); if (was !== cur && !still) { sweep.classList.remove('go'); void sweep.offsetWidth; sweep.classList.add('go'); } } });
+      es.forEach(function (e) { if (e.isIntersecting) { cur = panels.indexOf(e.target); paint(); } });
     }, { root: hs, threshold: .55 });
     panels.forEach(function (p) { pio.observe(p); });
     hs.addEventListener('wheel', function (e) {
@@ -321,8 +319,8 @@
     if (seen) wake();
   }).observe(stage);
 
-  // Clips play only while on screen; reduced motion keeps the posters.
-  if (!still) {
+  // Clips play only while on screen (also with reduced motion: that setting only removes big animation and depth).
+  {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
         if (e.isIntersecting) { var p = e.target.play(); if (p) p.catch(function () {}); } else e.target.pause();
@@ -331,6 +329,7 @@
     $$('video').forEach(function (v) { if (!v.hasAttribute('data-lesson')) io.observe(v); });
 
     // Entrances exist only after this script ran, so a script failure never hides content.
+    if (!still) {
     root.classList.add('rv-on');
     var rv = new IntersectionObserver(function (es) {
       es.forEach(function (e) {
@@ -342,5 +341,6 @@
     $$('.sec').forEach(function (s) {
       $$('.rv', s).forEach(function (el, i) { el.style.setProperty('--d', Math.min(i, 6) * 70 + 'ms'); rv.observe(el); });
     });
+    }
   }
 })();
