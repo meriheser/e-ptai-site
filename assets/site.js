@@ -7,6 +7,24 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
+
+  // Colour theme dots: turquoise (default) or the logo's black and neon green; kept in localStorage, no cookie.
+  (function () {
+    var btns = $$('[data-theme-set]'), meta = $('meta[name=theme-color]');
+    function paint(t) {
+      if (t) root.dataset.theme = t; else delete root.dataset.theme;
+      btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.themeSet === t); });
+      if (meta) meta.setAttribute('content', t ? '#000000' : '#040A0C');
+    }
+    paint(root.dataset.theme || '');
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        paint(b.dataset.themeSet);
+        try { if (b.dataset.themeSet) localStorage.setItem('e-theme', b.dataset.themeSet); else localStorage.removeItem('e-theme'); } catch (e) {}
+      });
+    });
+  })();
+
   // Carousel: one number (pos) drives every phone. Drag, arrows, keys and the timer set its target.
   var stage = $('.stage'), phones = $$('.ph'), fill = $('.track span'), cap = $('.cap'), autoBtn = $('.auto');
   var caps = $$('i', $('#caps').content);
@@ -217,6 +235,9 @@
       if ((e.ctrlKey || e.metaKey) && /^[supc]$/i.test(e.key) && !free(e)) e.preventDefault();
     });
   })();
+
+  // Pages sit side by side, so native lazy loading can miss them: once the first screen is done, load every picture.
+  addEventListener('load', function () { setTimeout(function () { $$('img[loading=lazy]').forEach(function (i) { i.loading = 'eager'; }); }, 400); });
 
   if (!('IntersectionObserver' in window)) return;
   new IntersectionObserver(function (es) {
