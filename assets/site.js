@@ -121,15 +121,22 @@
     });
   });
 
-  // Tabbed pages: a button shows its pane inside the same section.
+  // Tabbed pages: a pressed tab shows every element of its pane (text and picture) and hides the other pane.
   $$('[data-seg]').forEach(function (seg) {
-    var body = $('.duo-body', seg.closest('.sec'));
+    var page = seg.closest('.sec');
     $$('button', seg).forEach(function (b) {
       b.addEventListener('click', function () {
         $$('button', seg).forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
-        $$(':scope > .pane', body).forEach(function (p) { p.hidden = p.dataset.pane !== b.dataset.pane; });
+        $$('[data-pane]', page).forEach(function (p) { if (p.tagName !== 'BUTTON') p.hidden = p.dataset.pane !== b.dataset.pane; });
       });
     });
+  });
+  // Questions page: one question open, its answer in the card.
+  $$('.faq-w').forEach(function (w) {
+    var qs = $$('.faq-q button', w), ans = $('.faq-a', w), src = $$('.faq-src p', w);
+    function pick(i) { qs.forEach(function (q, k) { q.setAttribute('aria-selected', k === i); }); ans.innerHTML = src[i].innerHTML; }
+    qs.forEach(function (q, i) { q.addEventListener('click', function () { pick(i); }); });
+    pick(0);
   });
 
   // One-to-one AI lesson video, in three places (first page, lessons page, AI Coach page).
@@ -140,7 +147,7 @@
   if (lessonVideos.length) (function () {
     var WELCOME = window.__WELCOME !== undefined ? window.__WELCOME : true;
     var vids = lessonVideos, userMuted = false, wa = null, welcomeDone = false, busy = false, heroOn = false;
-    var hv = heroVid, wcap = $('.welcome-cap');
+    var hv = heroVid;
     // The voice (welcome line and the lesson video's sound) plays once per visit (tab session): after the first spoken round every video is muted.
     function markVoice() { try { sessionStorage.setItem('e-voice', '1'); } catch (e) {} }
     try { if (sessionStorage.getItem('e-voice')) { userMuted = true; welcomeDone = true; } } catch (e) {}
@@ -165,14 +172,14 @@
         v.muted = true; var q = v.play(); if (q) q.catch(function () {}); sync(v);
       });
     }
-    function hideCap() { if (wcap) wcap.hidden = true; }
+    function hideCap() {}
     function finish() { welcomeDone = true; busy = false; hideCap(); hv._user = false; start(hv, true); }
     function playWelcome() {
       if (!WELCOME || welcomeDone || !hv || (wa && busy)) return false;
       if (!wa) {
         wa = new Audio('/assets/audio/welcome-' + (root.lang || 'tr') + '.mp3'); wa.preload = 'auto';
         wa.addEventListener('ended', finish);
-        wa.addEventListener('playing', function () { markVoice(); if (wcap) wcap.hidden = false; });
+        wa.addEventListener('playing', function () { markVoice(); });
         wa.addEventListener('error', function () { welcomeDone = true; busy = false; hideCap(); start(hv, true); });
       }
       busy = true; hv.pause(); hv.currentTime = 0; wa.currentTime = 0;
@@ -227,6 +234,24 @@
     document.addEventListener('visibilitychange', function () { if (document.hidden) { vids.forEach(function (v) { v.pause(); }); if (wa && busy) { wa.pause(); busy = false; hideCap(); } } });
   })();
 
+  // Web only: the hero screens lean a little toward the pointer (not with reduced motion).
+  if (!still && matchMedia('(hover:hover) and (min-width:980px)').matches) {
+    var hero = $('.hero');
+    hero.addEventListener('pointermove', function (e) { var r = hero.getBoundingClientRect(); stage.style.setProperty('--mx', (((e.clientX - r.left) / r.width) * 2 - 1).toFixed(3)); stage.style.setProperty('--my', (((e.clientY - r.top) / r.height) * 2 - 1).toFixed(3)); });
+    hero.addEventListener('pointerleave', function () { stage.style.setProperty('--mx', 0); stage.style.setProperty('--my', 0); });
+  }
+
+  // Download button. Store links live in this one line; empty until the app is published (then the button opens the store for the visitor's system).
+  var STORE = { ios: '', android: '', other: '' };
+  (function () {
+    var b = $('[data-dl]'), m = $('.dl-msg'); if (!b) return;
+    b.addEventListener('click', function () {
+      var ua = navigator.userAgent, os = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) ? 'ios' : /Android/.test(ua) ? 'android' : 'other';
+      var url = STORE[os] || STORE.other;
+      if (url) window.open(url, '_blank', 'noopener'); else m.hidden = false;
+    });
+  })();
+
   // Follow-class builder: same numbers as components/follow-class.ts (fitness timing).
   var sec = $('.cls'), form = $('.builder'), out = $('.out', form), T = [[30, 30], [40, 20], [45, 15]];
   form.addEventListener('change', function () {
@@ -246,8 +271,12 @@
     var pv = $('.pg-prev', nav), nx = $('.pg-next', nav), num = $('.pg-n', nav);
     pv.setAttribute('aria-label', $('.arrow.prev').getAttribute('aria-label'));
     nx.setAttribute('aria-label', $('.arrow.next').getAttribute('aria-label'));
+    // Pictures load for the page on screen and the next three; the first screen stays light.
+    function warm(i) { for (var k = i - 1; k <= i + 3; k++) { if (panels[k]) $$('img[loading=lazy]', panels[k]).forEach(function (im) { if (!im.closest('[hidden]')) im.loading = 'eager'; }); } }
     function paint() {
+      warm(cur);
       num.textContent = (cur + 1) + ' / ' + panels.length;
+      root.dataset.pg = cur;
       pv.disabled = cur === 0; nx.disabled = cur === panels.length - 1;
       if (line) line.style.transform = 'scaleX(' + ((cur + 1) / panels.length).toFixed(3) + ')';
     }
@@ -276,13 +305,6 @@
       }
       if (held >= need) { shownAt = Date.now(); to(cur + 1); }
     }, 500);
-    var cue = document.createElement('button'); cue.type = 'button'; cue.className = 'cue';
-    cue.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
-    cue.setAttribute('aria-label', 'v'); document.body.appendChild(cue);
-    function cueCheck() { var p = panels[cur]; cue.classList.toggle('on', p.scrollHeight > p.clientHeight + 8 && p.scrollTop + p.clientHeight < p.scrollHeight - 12); }
-    cue.addEventListener('click', function () { var p = panels[cur]; p.scrollBy({ top: p.clientHeight * .7, behavior: still ? 'auto' : 'smooth' }); });
-    panels.forEach(function (p) { p.addEventListener('scroll', cueCheck, { passive: true }); });
-    addEventListener('resize', cueCheck); setInterval(cueCheck, 600);
     pv.addEventListener('click', function () { to(cur - 1); });
     nx.addEventListener('click', function () { to(cur + 1); });
     var pio = new IntersectionObserver(function (es) {
@@ -322,8 +344,6 @@
     });
   })();
 
-  // Pages sit side by side, so native lazy loading can miss them: once the first screen is done, load every picture.
-  addEventListener('load', function () { setTimeout(function () { $$('img').forEach(function (i) { i.loading = 'eager'; if (i.decode) i.decode().catch(function () {}); }); }, 400); });
 
   if (!('IntersectionObserver' in window)) return;
   new IntersectionObserver(function (es) {
