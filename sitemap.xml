@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.e-ptai.com/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ar/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/gizlilik/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/kullanim-kosullari/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/hesap-silme/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/privacy/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/terms/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/delete-account/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/es/privacy/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/es/terms/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/es/delete-account/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ru/privacy/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ru/terms/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ru/delete-account/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ar/privacy/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ar/terms/</loc>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ar/delete-account/</loc>
+  </url>
+</urlset>

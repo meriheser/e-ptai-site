@@ -104,6 +104,31 @@
     });
   });
 
+  // Tabbed pages: a button shows its pane inside the same section.
+  $$('[data-seg]').forEach(function (seg) {
+    var body = $('.duo-body', seg.closest('.sec'));
+    $$('button', seg).forEach(function (b) {
+      b.addEventListener('click', function () {
+        $$('button', seg).forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+        $$(':scope > .pane', body).forEach(function (p) { p.hidden = p.dataset.pane !== b.dataset.pane; });
+      });
+    });
+  });
+
+  // One-to-one AI lesson concept video: starts muted and paused; its own play and sound buttons.
+  (function () {
+    var fig = $('.lesson-demo'); if (!fig) return;
+    var v = $('video', fig), pl = $('.v-play', fig), sn = $('.v-snd', fig);
+    function sync() {
+      pl.classList.toggle('on', !v.paused); pl.setAttribute('aria-label', v.paused ? pl.dataset.play : pl.dataset.pause);
+      sn.classList.toggle('on', !v.muted); sn.setAttribute('aria-label', v.muted ? sn.dataset.on : sn.dataset.off);
+    }
+    pl.addEventListener('click', function () { if (v.paused) { var p = v.play(); if (p) p.catch(function () {}); } else v.pause(); });
+    sn.addEventListener('click', function () { v.muted = !v.muted; sync(); });
+    v.addEventListener('play', sync); v.addEventListener('pause', sync); sync();
+    new IntersectionObserver(function (es) { if (!es[0].isIntersecting) v.pause(); }).observe(v);
+  })();
+
   // Follow-class builder: same numbers as components/follow-class.ts (fitness timing).
   var sec = $('.cls'), form = $('.builder'), out = $('.out', form), T = [[30, 30], [40, 20], [45, 15]];
   form.addEventListener('change', function () {
@@ -147,6 +172,13 @@
       var p = panels[cur], tall = p.scrollHeight > p.clientHeight + 2;
       if (Date.now() - shownAt >= (cur === 0 ? 14000 : tall ? 16000 : 9000)) { shownAt = Date.now(); to(cur + 1); }
     }, 500);
+    var cue = document.createElement('button'); cue.type = 'button'; cue.className = 'cue';
+    cue.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+    cue.setAttribute('aria-label', 'v'); document.body.appendChild(cue);
+    function cueCheck() { var p = panels[cur]; cue.classList.toggle('on', p.scrollHeight > p.clientHeight + 8 && p.scrollTop + p.clientHeight < p.scrollHeight - 12); }
+    cue.addEventListener('click', function () { var p = panels[cur]; p.scrollBy({ top: p.clientHeight * .7, behavior: still ? 'auto' : 'smooth' }); });
+    panels.forEach(function (p) { p.addEventListener('scroll', cueCheck, { passive: true }); });
+    addEventListener('resize', cueCheck); setInterval(cueCheck, 600);
     pv.addEventListener('click', function () { to(cur - 1); });
     nx.addEventListener('click', function () { to(cur + 1); });
     var pio = new IntersectionObserver(function (es) {
@@ -199,7 +231,7 @@
         if (e.isIntersecting) { var p = e.target.play(); if (p) p.catch(function () {}); } else e.target.pause();
       });
     }, { threshold: .3 });
-    $$('video').forEach(function (v) { io.observe(v); });
+    $$('video').forEach(function (v) { if (!v.closest('.lesson-demo')) io.observe(v); });
 
     // Entrances exist only after this script ran, so a script failure never hides content.
     root.classList.add('rv-on');
