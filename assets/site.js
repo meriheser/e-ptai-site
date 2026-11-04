@@ -1,0 +1,217 @@
+// E-PtAi site: hero carousel, move tabs, follow-class builder, entrances. No dependencies.
+(function () {
+  var root = document.documentElement;
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var dir = root.dir === 'rtl' ? -1 : 1;
+  if (still) root.classList.add('still');
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  // Carousel: one number (pos) drives every phone. Drag, arrows, keys and the timer set its target.
+  var stage = $('.stage'), phones = $$('.ph'), fill = $('.track span'), cap = $('.cap'), autoBtn = $('.auto');
+  var caps = $$('i', $('#caps').content);
+  var n = phones.length, pos = 0, target = 0, active = 0, w = 200, narrow = false;
+  var STEP = 3500, playing = !still, hold = false, t0 = performance.now(), elapsed = 0, seen = true, raf = 0;
+
+  function measure() { w = phones[0].offsetWidth; narrow = innerWidth < 760; }
+  function apply() {
+    phones.forEach(function (p, i) {
+      var d = ((i - pos + n / 2) % n + n) % n - n / 2, a = Math.abs(d);
+      var t = d * 34 * Math.PI / 180, R = w * (narrow ? 1.45 : 1.75);
+      var x = dir * R * Math.sin(t), z = R * (Math.cos(t) - 1) - Math.min(a, 1) * w * .3;
+      p.style.transform = 'translate3d(' + x.toFixed(1) + 'px,0,' + z.toFixed(1) + 'px) rotateY(' + (dir * d * 30).toFixed(2) + 'deg)';
+      p.style.opacity = a > 2.15 ? Math.max(0, 2.5 - a) / .35 : 1;
+      p.style.zIndex = 10 - Math.round(a);
+      p.style.setProperty('--dim', Math.min(a * .42, .8).toFixed(2));
+    });
+    var r = ((Math.round(pos) % n) + n) % n;
+    if (r !== active) { active = r; cap.textContent = caps[r].textContent; }
+  }
+  function bar() {
+    var f = playing ? Math.min(1, elapsed / STEP) : 1;
+    var idx = ((Math.round(target) % n) + n) % n;
+    fill.style.transform = 'scaleX(' + ((idx + f) / n).toFixed(4) + ')';
+  }
+  function frame(now) {
+    raf = 0;
+    if (!seen) return;
+    var dt = now - t0; t0 = now;
+    if (playing && !hold) {
+      elapsed += Math.min(dt, 100);
+      if (elapsed >= STEP) { elapsed = 0; target = Math.round(target) + 1; }
+    }
+    pos = still ? target : pos + (target - pos) * (1 - Math.exp(-dt / 130));
+    if (Math.abs(target - pos) < .001) pos = target;
+    apply(); bar();
+    if (!still || pos !== target) raf = requestAnimationFrame(frame);
+  }
+  function wake() { if (!raf) { t0 = performance.now(); raf = requestAnimationFrame(frame); } }
+  function go(by) { target = Math.round(target) + by; elapsed = 0; wake(); }
+  function setPlaying(v) {
+    playing = v; elapsed = 0;
+    root.classList.toggle('paused', !v);
+    autoBtn.setAttribute('aria-label', v ? autoBtn.dataset.pause : autoBtn.dataset.play);
+    wake();
+  }
+  $('.prev').addEventListener('click', function () { go(-1); });
+  $('.next').addEventListener('click', function () { go(1); });
+  autoBtn.addEventListener('click', function () { setPlaying(!playing); });
+  stage.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k !== 'ArrowLeft' && k !== 'ArrowRight') return;
+    e.preventDefault();
+    e.stopPropagation();
+    go((k === 'ArrowRight' ? 1 : -1) * dir);
+  });
+  var sx = 0, sp = 0, pid = null, moved = false;
+  stage.addEventListener('pointerdown', function (e) {
+    if (e.button || e.target.closest('button')) return;
+    pid = e.pointerId; sx = e.clientX; sp = target; moved = false;
+  });
+  stage.addEventListener('pointermove', function (e) {
+    if (e.pointerId !== pid) return;
+    var dx = e.clientX - sx;
+    if (!moved && Math.abs(dx) < 8) return;
+    if (!moved) { moved = true; hold = true; stage.setPointerCapture(pid); stage.classList.add('drag'); }
+    target = sp - dir * dx / (w * 1.1);
+    wake();
+  });
+  function end(e) {
+    if (e.pointerId !== pid) return;
+    pid = null;
+    if (!moved) return;
+    stage.classList.remove('drag');
+    target = Math.round(target); elapsed = 0; hold = false; t0 = performance.now();
+    wake();
+  }
+  stage.addEventListener('pointerup', end);
+  stage.addEventListener('pointercancel', end);
+  addEventListener('resize', function () { measure(); apply(); });
+  measure(); apply(); bar();
+  if (still) setPlaying(false);
+
+  // Move library tabs: thumbs and the phone's clip follow the chosen style.
+  var video = $('.clip-phone video'), clips = video.dataset.clips.split(',');
+  $$('[data-tab]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var i = +b.dataset.tab;
+      $$('[data-tab]').forEach(function (x) { x.setAttribute('aria-pressed', x === b); });
+      $$('[data-group]').forEach(function (g) { g.hidden = +g.dataset.group !== i; });
+      video.poster = '/assets/img/clips/' + clips[i] + '.webp';
+      $('source', video).src = '/assets/img/clips/' + clips[i] + '.mp4';
+      video.load();
+      if (!still) { var p = video.play(); if (p) p.catch(function () {}); }
+    });
+  });
+
+  // Follow-class builder: same numbers as components/follow-class.ts (fitness timing).
+  var sec = $('.cls'), form = $('.builder'), out = $('.out', form), T = [[30, 30], [40, 20], [45, 15]];
+  form.addEventListener('change', function () {
+    var m = +form.elements.len.value, p = T[+form.elements.int.value];
+    var c = Math.max(3, Math.round((m * 60 - 10 + p[1]) / (p[0] + p[1])));
+    out.textContent = sec.dataset.out.replace('{n}', c).replace('{w}', p[0]).replace('{r}', p[1]);
+  });
+
+
+  // Horizontal pages: one panel per section; wheel, keys and the pill move sideways, a tall panel scrolls itself first.
+  (function () {
+    var hs = $('#hs'); if (!hs) return;
+    var panels = $$('.hero,.sec,.foot', hs), cur = 0, last = 0, line = $('.scrollbar');
+    var nav = document.createElement('nav'); nav.className = 'pager'; nav.setAttribute('aria-label', document.title);
+    nav.innerHTML = '<button type="button" class="pg-prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><span class="pg-n" aria-live="polite"></span><button type="button" class="pg-auto"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-pause" d="M8 5v14M16 5v14"/><path class="ic-play" d="M8 5l11 7-11 7z"/></svg></button><button type="button" class="pg-next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>';
+    document.body.appendChild(nav);
+    var sweep = document.createElement('i'); sweep.className = 'sweep'; sweep.setAttribute('aria-hidden', 'true'); document.body.appendChild(sweep);
+    var pv = $('.pg-prev', nav), nx = $('.pg-next', nav), num = $('.pg-n', nav);
+    pv.setAttribute('aria-label', $('.arrow.prev').getAttribute('aria-label'));
+    nx.setAttribute('aria-label', $('.arrow.next').getAttribute('aria-label'));
+    function paint() {
+      num.textContent = (cur + 1) + ' / ' + panels.length;
+      pv.disabled = cur === 0; nx.disabled = cur === panels.length - 1;
+      if (line) line.style.transform = 'scaleX(' + ((cur + 1) / panels.length).toFixed(3) + ')';
+    }
+    function to(i) {
+      i = Math.max(0, Math.min(panels.length - 1, i));
+      panels[i].scrollIntoView({ behavior: still ? 'auto' : 'smooth', inline: 'start', block: 'nearest' });
+    }
+    var pa = $('.pg-auto', nav);
+    pa.setAttribute('aria-label', autoBtn.getAttribute('aria-label'));
+    pa.addEventListener('click', function () { setPlaying(!playing); pa.setAttribute('aria-label', autoBtn.getAttribute('aria-label')); });
+    // Auto page change: the phones first, then one page at a time; any touch, key or wheel holds it for 20 s; stops on the last page.
+    var userAt = 0, shownAt = Date.now(), seenCur = 0;
+    ['wheel', 'touchstart', 'pointerdown', 'keydown'].forEach(function (t) {
+      addEventListener(t, function () { userAt = Date.now(); }, { passive: true });
+    });
+    setInterval(function () {
+      if (cur !== seenCur) { seenCur = cur; shownAt = Date.now(); }
+      if (!playing || still || document.hidden || cur === panels.length - 1 || Date.now() - userAt < 20000) return;
+      var p = panels[cur], tall = p.scrollHeight > p.clientHeight + 2;
+      if (Date.now() - shownAt >= (cur === 0 ? 14000 : tall ? 16000 : 9000)) { shownAt = Date.now(); to(cur + 1); }
+    }, 500);
+    pv.addEventListener('click', function () { to(cur - 1); });
+    nx.addEventListener('click', function () { to(cur + 1); });
+    var pio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { var was = cur; cur = panels.indexOf(e.target); paint(); if (was !== cur && !still) { sweep.classList.remove('go'); void sweep.offsetWidth; sweep.classList.add('go'); } } });
+    }, { root: hs, threshold: .55 });
+    panels.forEach(function (p) { pio.observe(p); });
+    hs.addEventListener('wheel', function (e) {
+      if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+      var p = panels[cur], down = e.deltaY > 0;
+      var room = down ? p.scrollHeight - p.clientHeight - p.scrollTop : p.scrollTop;
+      if (room > 2) return;
+      e.preventDefault();
+      var now = Date.now();
+      if (Math.abs(e.deltaY) < 8 || now - last < 650) return;
+      last = now; to(cur + (down ? 1 : -1));
+    }, { passive: false });
+    addEventListener('keydown', function (e) {
+      if (e.target.closest && e.target.closest('input,select,textarea,summary')) return;
+      var k = e.key, fwd = dir === 1 ? 'ArrowRight' : 'ArrowLeft', bwd = dir === 1 ? 'ArrowLeft' : 'ArrowRight';
+      if (k === fwd || k === 'PageDown') { e.preventDefault(); to(cur + 1); }
+      else if (k === bwd || k === 'PageUp') { e.preventDefault(); to(cur - 1); }
+      else if (k === 'Home') { e.preventDefault(); to(0); }
+      else if (k === 'End') { e.preventDefault(); to(panels.length - 1); }
+    });
+    addEventListener('resize', function () { to(cur); });
+    paint();
+  })();
+
+  // Copy deterrent for the home pages: no right-click menu, drag, selection or copy, except the footer's contact details.
+  (function () {
+    var free = function (e) { return e.target.closest && e.target.closest('.foot'); };
+    ['contextmenu', 'dragstart', 'copy', 'cut', 'selectstart'].forEach(function (t) {
+      document.addEventListener(t, function (e) { if (!free(e)) e.preventDefault(); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if ((e.ctrlKey || e.metaKey) && /^[supc]$/i.test(e.key) && !free(e)) e.preventDefault();
+    });
+  })();
+
+  if (!('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (es) {
+    seen = es[0].isIntersecting;
+    if (seen) wake();
+  }).observe(stage);
+
+  // Clips play only while on screen; reduced motion keeps the posters.
+  if (!still) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { var p = e.target.play(); if (p) p.catch(function () {}); } else e.target.pause();
+      });
+    }, { threshold: .3 });
+    $$('video').forEach(function (v) { io.observe(v); });
+
+    // Entrances exist only after this script ran, so a script failure never hides content.
+    root.classList.add('rv-on');
+    var rv = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        rv.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    $$('.sec').forEach(function (s) {
+      $$('.rv', s).forEach(function (el, i) { el.style.setProperty('--d', Math.min(i, 6) * 70 + 'ms'); rv.observe(el); });
+    });
+  }
+})();

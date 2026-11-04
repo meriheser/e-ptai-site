@@ -1,95 +1,202 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>E-PtAi – Yapay Zeka Destekli Fitness ve Beslenme Koçu</title>
-<meta name="description" content="E-PtAi, kişiye özel antrenman, beslenme planı, vücut analizi ve yapay zeka koçu sunan mobil fitness uygulamasıdır. Granola Kozmetik Medikal ve Tekstil Sanayi Ticaret Pazarlama Limited Şirketi markasıdır.">
-<meta property="og:title" content="E-PtAi – Yapay Zeka Destekli Fitness ve Beslenme Koçu">
-<meta property="og:image" content="https://www.e-ptai.com/tanitim.webp">
+<title>E-PtAi – Antrenman, Beslenme ve AI Koç Tek Uygulamada</title>
+<meta name="description" content="E-PtAi; 333 hareket videosu, takip dersleri, kişisel plan, beslenme ve AI Koç'u tek uygulamada toplar. App Store ve Google Play'de yakında.">
+<meta name="theme-color" content="#040A0C">
+<link rel="canonical" href="https://www.e-ptai.com/">
+<link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/">
 <link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/">
-<style>
-  :root { color-scheme: dark; --acc: #2ee6f0; --txt: #e8fbfc; --muted: #b7d8db; }
-  * { box-sizing: border-box; }
-  body { margin: 0; background: radial-gradient(circle at 50% 0%, #0b3a40 0%, #050b0d 60%) fixed; color: var(--txt);
-         font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; line-height: 1.6; }
-  header, main, footer { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-  nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; flex-wrap: wrap; gap: 8px; }
-  nav .brand { font-weight: 800; font-size: 1.4rem; } nav .brand span, h1 span { color: var(--acc); }
-  nav a { color: var(--muted); text-decoration: none; margin-left: 16px; } nav a:hover { color: var(--acc); }
-  .hero { text-align: center; padding: 40px 0 24px; }
-  h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 12px; line-height: 1.2; }
-  .lead { color: var(--muted); max-width: 720px; margin: 0 auto 20px; font-size: 1.1rem; }
-  .badge { display: inline-block; padding: 8px 18px; border: 1px solid var(--acc); border-radius: 999px; color: var(--acc); font-weight: 600; }
-  img.shot { width: 100%; height: auto; border-radius: 16px; box-shadow: 0 0 40px rgba(46,230,240,.25); margin: 28px 0; }
-  h2 { font-size: 1.6rem; margin: 48px 0 16px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-  .card { background: rgba(255,255,255,.04); border: 1px solid rgba(46,230,240,.2); border-radius: 14px; padding: 18px; }
-  .card h3 { margin: 0 0 6px; color: var(--acc); font-size: 1.05rem; } .card p { margin: 0; color: var(--muted); }
-  table { width: 100%; border-collapse: collapse; } td { padding: 8px 10px; border-bottom: 1px solid rgba(255,255,255,.08); vertical-align: top; }
-  td:first-child { color: var(--muted); width: 38%; }
-  a { color: var(--acc); }
-  footer { margin-top: 56px; padding: 24px 16px 40px; color: #7fa3a6; font-size: .9rem; border-top: 1px solid rgba(255,255,255,.08); }
-  footer a { margin-right: 14px; }
-</style>
+<link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/">
+<link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/">
+<link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/">
+<link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="E-PtAi">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="https://www.e-ptai.com/">
+<meta property="og:title" content="E-PtAi – Antrenman, Beslenme ve AI Koç Tek Uygulamada">
+<meta property="og:description" content="E-PtAi; 333 hareket videosu, takip dersleri, kişisel plan, beslenme ve AI Koç'u tek uygulamada toplar. App Store ve Google Play'de yakında.">
+<meta property="og:image" content="https://www.e-ptai.com/assets/img/og-tr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="E-PtAi uygulama ekranlarını gösteren telefonlar">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/icon-64.png" type="image/png">
+<link rel="preload" href="/assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<script>document.documentElement.classList.add('js');try{if(sessionStorage.getItem('e-intro'))document.documentElement.classList.add('no-intro');else sessionStorage.setItem('e-intro','1')}catch(e){}</script>
+<script defer src="/assets/site.js" onerror="document.documentElement.classList.remove('js')"></script>
 </head>
 <body>
-<header>
-  <nav>
-    <div class="brand">E-<span>PtAi</span></div>
-    <div><a href="#ozellikler">Özellikler</a><a href="#fiyat">Fiyatlandırma</a><a href="#sirket">Şirket</a><a href="#iletisim">İletişim</a><a href="/en/">English</a></div>
-  </nav>
+<div class="intro" aria-hidden="true"><span class="intro-burst"></span><span class="intro-logo"><svg class="mark" width="96" height="96" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1=".14" x2="0" y2=".86"><stop offset="0" stop-color="#7FF6FF"/><stop offset=".5" stop-color="#2EE6EA"/><stop offset="1" stop-color="#14B8C4"/></linearGradient></defs><path d="M24.8 84.3A41 41 0 1 1 75.2 84.3" stroke="#2EE6EA" stroke-opacity=".6" stroke-width="3.4" stroke-linecap="round" fill="none"/><circle cx="75.2" cy="84.3" r="3.6" fill="#7FF6FF"/><circle cx="50" cy="21.5" r="7.4" fill="url(#bm)"/><path d="M26 27 50 48M74 27 50 48M50 48V59M50 59 37 81M50 59 63 81" stroke="url(#bm)" stroke-width="8.6" stroke-linecap="round" fill="none"/></svg><span class="word" dir="ltr">E-Pt<span>Ai</span></span></span><span class="intro-line"></span></div>
+<a class="skip" href="#hareketler">İçeriğe geç</a>
+<div class="scrollbar" aria-hidden="true"></div>
+<header class="bar">
+  <a class="brand" href="/" aria-label="E-PtAi"><svg class="mark" width="34" height="34" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1=".14" x2="0" y2=".86"><stop offset="0" stop-color="#7FF6FF"/><stop offset=".5" stop-color="#2EE6EA"/><stop offset="1" stop-color="#14B8C4"/></linearGradient></defs><path d="M24.8 84.3A41 41 0 1 1 75.2 84.3" stroke="#2EE6EA" stroke-opacity=".6" stroke-width="3.4" stroke-linecap="round" fill="none"/><circle cx="75.2" cy="84.3" r="3.6" fill="#7FF6FF"/><circle cx="50" cy="21.5" r="7.4" fill="url(#bm)"/><path d="M26 27 50 48M74 27 50 48M50 48V59M50 59 37 81M50 59 63 81" stroke="url(#bm)" stroke-width="8.6" stroke-linecap="round" fill="none"/></svg><span class="word" dir="ltr">E-Pt<span>Ai</span></span></a>
+  <nav class="langs" aria-label="Dil"><a href="/" lang="tr" hreflang="tr" title="Türkçe" aria-label="Türkçe" aria-current="page">TR</a><a href="/en/" lang="en" hreflang="en" title="English" aria-label="English">EN</a><a href="/es/" lang="es" hreflang="es" title="Español" aria-label="Español">ES</a><a href="/ru/" lang="ru" hreflang="ru" title="Русский" aria-label="Русский">RU</a><a href="/ar/" lang="ar" hreflang="ar" title="العربية" aria-label="العربية">AR</a></nav>
 </header>
-<main>
-  <section class="hero">
-    <h1>Yapay zeka destekli kişisel<br><span>fitness ve beslenme koçun</span></h1>
-    <p class="lead">E-PtAi; hedefine, vücut ölçülerine ve yaşam tarzına göre kişisel antrenman programı, haftalık beslenme planı ve günlük takip sunan bir mobil uygulamadır. Yapay zeka koçu her gün ilerlemeni değerlendirir ve planını günceller.</p>
-    <span class="badge">iOS ve Android – App Store ve Google Play'de yakında</span>
-    <img class="shot" src="tanitim.webp" alt="E-PtAi uygulama ekranları: antrenman, beslenme planı, akıllı saat senkronizasyonu ve yapay zeka koçu" width="1448" height="1086">
-  </section>
-
-  <section id="ozellikler">
-    <h2>Özellikler</h2>
-    <div class="grid">
-      <div class="card"><h3>Kişisel antrenman</h3><p>Çalışmak istediğin bölgeleri seç; salon veya ev için set, tekrar ve süreyi senin seviyene göre planlar.</p></div>
-      <div class="card"><h3>Beslenme planı</h3><p>Günlük kalori, protein, karbonhidrat ve yağ hedefleri; Türk mutfağına uygun haftalık menü.</p></div>
-      <div class="card"><h3>Tabak fotoğrafı</h3><p>Yemeğinin fotoğrafını çek, yaklaşık kalori ve makro tahminini gör.</p></div>
-      <div class="card"><h3>Yapay zeka koçu</h3><p>Sesli ve yazılı günlük motivasyon, ilerleme yorumu ve plan önerileri.</p></div>
-      <div class="card"><h3>Kas haritası ve ölçüm takibi</h3><p>Hangi kas grubunu ne kadar çalıştırdığını, kilo ve vücut ölçülerinin değişimini gör.</p></div>
-      <div class="card"><h3>Akıllı saat ve sağlık</h3><p>Apple Sağlık ve Health Connect ile adım ve aktivite verilerini senkronize et.</p></div>
+<div class="hs" id="hs"><main>
+<section class="hero">
+  <div class="hero-text">
+    <h1>Spor ve beslenmen tek uygulamada.</h1>
+    <p class="lead">Antrenman, beslenme, ilerleme ve AI Koç. Basit, güçlü, senin.</p>
+    <div class="stores">
+      <button type="button" class="store" disabled><span>App Store</span> Yakında</button>
+      <button type="button" class="store" disabled><span>Google Play</span> Yakında</button>
     </div>
-  </section>
-
-  <section id="fiyat">
-    <h2>Fiyatlandırma</h2>
-    <div class="grid">
-      <div class="card"><h3>Ücretsiz</h3><p>Antrenman, beslenme ve VKİ takibi ücretsizdir.</p></div>
-      <div class="card"><h3>Premium</h3><p>Gelişmiş grafikler ve ek programlar; abonelik ücretleri uygulama mağazasında gösterilir.</p></div>
-      <div class="card"><h3>AI Koç</h3><p>Kişisel yapay zeka koçu aboneliği; uygulama içinden yönetilir ve istediğin zaman iptal edilebilir.</p></div>
+    <p class="note sample">Ekranlardaki ad ve kilolar (Ahmet, <bdi dir="ltr">93→80 kg</bdi>) örnek veridir.</p>
+  </div>
+  <div class="hero-stage">
+    <div class="stage" role="group" aria-roledescription="carousel" aria-label="Uygulama ekranları" tabindex="0">
+      <div class="light" aria-hidden="true"></div>
+      <div class="pedestal" aria-hidden="true"></div>
+      <div class="ring">
+        <figure class="ph" data-i="0"><div class="bob"><div class="phone "><img src="/assets/img/tr/dashboard.webp" alt="E-PtAi ana sayfa ekranı: AI Koç kartı, hedef kilo, günlük takip ve öğün planı" width="560" height="1195" fetchpriority="high" decoding="async"></div></div></figure>
+        <figure class="ph" data-i="1"><div class="bob"><div class="phone "><img src="/assets/img/tr/workout.webp" alt="E-PtAi antrenman ekranı: bugünün hareketleri ve Antrenmanı Başlat düğmesi" width="560" height="1195" fetchpriority="high" decoding="async"></div></div></figure>
+        <figure class="ph" data-i="2"><div class="bob"><div class="phone "><img src="/assets/img/tr/class-run.webp" alt="E-PtAi takip dersi ekranı: tam ekran hareket videosu ve geri sayım" width="560" height="1195" fetchpriority="high" decoding="async"></div></div></figure>
+        <figure class="ph" data-i="3"><div class="bob"><div class="phone "><img src="/assets/img/tr/ranks.webp" alt="E-PtAi Güç Skoru ekranı: Granit rütbesi ve on rütbenin kalkanları" width="560" height="1195" loading="lazy" decoding="async"></div></div></figure>
+        <figure class="ph" data-i="4"><div class="bob"><div class="phone "><img src="/assets/img/tr/plan.webp" alt="E-PtAi Planın hazır ekranı: hedef grafiği, program ve günlük kalori" width="560" height="1195" loading="lazy" decoding="async"></div></div></figure>
+      </div>
+      <button class="arrow prev" type="button" aria-label="Önceki ekran"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button class="arrow next" type="button" aria-label="Sonraki ekran"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     </div>
-  </section>
+    <div class="ctl-row">
+      <p class="cap" aria-live="polite">Ana sayfa</p>
+      <div class="track" aria-hidden="true"><span></span></div>
+      <button class="auto" type="button" aria-label="Otomatik geçişi durdur" data-pause="Otomatik geçişi durdur" data-play="Otomatik geçişi başlat"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="ic-pause" d="M8 5v14M16 5v14"/><path class="ic-play" d="M8 5l11 7-11 7z"/></svg></button>
+    </div>
+    <template id="caps"><i>Ana sayfa</i><i>Antrenman</i><i>Takip Dersi</i><i>Güç Skoru</i><i>Planın hazır</i></template>
+  </div>
+</section>
 
-  <section id="sirket">
-    <h2>Şirket bilgileri</h2>
-    <table>
-      <tr><td>Ticaret unvanı</td><td>Granola Kozmetik Medikal ve Tekstil Sanayi Ticaret Pazarlama Limited Şirketi</td></tr>
-      <tr><td>Marka</td><td>E-PtAi</td></tr>
-      <tr><td>Adres</td><td>Beşevler Mah. Yıldırım Cad. Yılmaz Apt. Sitesi No: 274/1C, Nilüfer / Bursa, Türkiye</td></tr>
-      <tr><td>MERSİS no</td><td>0411111840400001</td></tr>
-      <tr><td>Ticaret sicil no</td><td>123488 (Bursa)</td></tr>
-      <tr><td>Vergi dairesi / VKN</td><td>Çekirge V.D. / 4111118404</td></tr>
-      <tr><td>Kuruluş</td><td>30.05.2023</td></tr>
-    </table>
-  </section>
+<section class="sec lib" id="hareketler">
+  <div class="lib-text">
+    <h2 class="rv">333 hareket videosu</h2>
+    <p class="say rv">Her hareketi izle, sonra birlikte yap.</p>
+    <div class="tabs rv" role="group" aria-label="Dal seç"><button type="button" data-tab="0" aria-pressed="true">Fitness</button><button type="button" data-tab="1" aria-pressed="false">Yoga</button><button type="button" data-tab="2" aria-pressed="false">Pilates</button><button type="button" data-tab="3" aria-pressed="false">Evde</button></div>
+    <ul class="feats rv"><li>Kasa göre bul</li><li>Tam ekran oynatıcı</li><li>Sesli koç</li><li>Tekrar sayacı</li></ul>
+  </div>
+  <div class="lib-pic rv">
+    <div class="thumbs" data-group="0"><img src="/assets/img/moves/goblet-squat.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/sumo-deadlift.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/step-up.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/curtsy-lunge.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/goblet-reverse-lunge.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/incline-dumbbell-press.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/front-raise.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/upright-row.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/hammer-curl.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/overhead-triceps-extension.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/bent-over-row.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/chin-up.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/diamond-push-up.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/farmer-carry.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/dumbbell-thruster.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/russian-twist.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/barbell-reverse-curl.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/barbell-drag-curl.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/dumbbell-side-bend.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/kettlebell-high-pull.webp" alt="" width="120" height="100" loading="lazy" decoding="async"></div>
+    <div class="thumbs" data-group="1" hidden><img src="/assets/img/moves/reverse-warrior.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/half-moon.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/crescent-lunge.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/garland.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/humble-warrior.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/standing-forward-fold.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/locust.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/bow.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/cow-face.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/upward-salute.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/standing-crescent-moon.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/reclined-bound-angle.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/seated-wide-angle-fold.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/revolved-chair.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/hero-pose.webp" alt="" width="120" height="100" loading="lazy" decoding="async"></div>
+    <div class="thumbs" data-group="2" hidden><img src="/assets/img/moves/corkscrew.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/neck-pull.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/spine-twist.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/mermaid.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/leg-pull-back.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/clam.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/toe-taps.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/dart.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/ab-prep.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/single-leg-teaser.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/swan-dive.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/knee-folds.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/side-lying-double-leg-lift.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/stability-ball-wall-squat.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/single-straight-leg-stretch.webp" alt="" width="120" height="100" loading="lazy" decoding="async"></div>
+    <div class="thumbs" data-group="3" hidden><img src="/assets/img/moves/wall-push-up.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/fire-hydrant.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/plank-jack.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/jump-squat.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/split-squat.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/stair-step-up.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/bottle-curl.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/bottle-lateral-raise.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/bicycle-crunch.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/wall-angel.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/bottle-front-raise.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/bottle-triceps-kickback.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/kneeling-squat.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/chair-supported-calf-raise.webp" alt="" width="120" height="100" loading="lazy" decoding="async"><img src="/assets/img/moves/backpack-overhead-press.webp" alt="" width="120" height="100" loading="lazy" decoding="async"></div>
+    <div class="phone clip-phone"><video muted loop playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback preload="none" width="360" height="640" poster="/assets/img/clips/shoulder-press.webp" aria-label="Uygulamadaki kısa hareket klibi" data-clips="shoulder-press,warrior-2,teaser,bodyweight-squat"><source src="/assets/img/clips/shoulder-press.mp4" type="video/mp4"></video></div>
+  </div>
+</section>
 
-  <section id="iletisim">
-    <h2>İletişim</h2>
-    <p>Genel: <a href="mailto:merih@e-ptai.com">merih@e-ptai.com</a><br>Destek: <a href="mailto:destek@e-ptai.com">destek@e-ptai.com</a></p>
-  </section>
+<section class="sec cls" id="takip-dersi" data-out="{n} hareket · {w} sn iş · {r} sn dinlenme">
+  <h2 class="rv">20, 30 ya da 45 dakika</h2>
+  <p class="say rv">Takip Dersi: süreni seç, ekrandaki hareketi takip et.</p>
+  <div class="cls-grid">
+    <form class="glass builder rv" onsubmit="return false">
+      <fieldset class="seg big"><legend>Süre</legend><label><input type="radio" name="len" value="20"><span><b>20</b> dk</span></label><label><input type="radio" name="len" value="30" checked><span><b>30</b> dk</span></label><label><input type="radio" name="len" value="45"><span><b>45</b> dk</span></label></fieldset>
+      <fieldset class="seg"><legend>Tempo</legend><label><input type="radio" name="int" value="0"><span>Hafif</span></label><label><input type="radio" name="int" value="1" checked><span>Orta</span></label><label><input type="radio" name="int" value="2"><span>Yoğun</span></label></fieldset>
+      <output class="out">30 hareket · 40 sn iş · 20 sn dinlenme</output>
+    </form>
+    <div class="cls-pic rv"><div class="phone tilt-a"><img src="/assets/img/tr/class-run.webp" alt="E-PtAi takip dersi ekranı: tam ekran hareket videosu ve geri sayım" width="560" height="1195" loading="lazy" decoding="async"></div><div class="phone tilt-b"><img src="/assets/img/tr/follow-class.webp" alt="E-PtAi Takip Dersi ekranı: süre ve tempo seçimi" width="560" height="1195" loading="lazy" decoding="async"></div></div>
+    <div class="music rv"><p>Müziğin senin: Apple Music, Spotify ya da YouTube Music.</p><p class="em">Koç konuşunca müzik kısılır.</p></div>
+  </div>
+</section>
+
+<section class="sec plan" id="plan">
+  <img class="scene" src="/assets/img/scene-city.webp" alt="" width="1400" height="788" loading="lazy" decoding="async">
+  <div class="plan-in">
+    <div>
+      <h2 class="rv">12 adımda planın hazır</h2>
+      <div class="twelve rv" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="say rv">Kalori hedefin ve planın her hafta sana göre ayarlanır.</p>
+      <p class="note rv">Grafik tahmindir, sonuç garantisi değildir.</p>
+      <figure class="clip-row rv"><div class="clips"><div class="clip-card"><video muted loop playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback preload="none" width="360" height="640" poster="/assets/img/clips/deadlift.webp" aria-hidden="true" tabindex="-1"><source src="/assets/img/clips/deadlift.mp4" type="video/mp4"></video></div><div class="clip-card"><video muted loop playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback preload="none" width="360" height="640" poster="/assets/img/clips/tree.webp" aria-hidden="true" tabindex="-1"><source src="/assets/img/clips/tree.mp4" type="video/mp4"></video></div><div class="clip-card"><video muted loop playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback preload="none" width="360" height="640" poster="/assets/img/clips/biceps-curl.webp" aria-hidden="true" tabindex="-1"><source src="/assets/img/clips/biceps-curl.mp4" type="video/mp4"></video></div></div><figcaption>Uygulamadaki hareket klipleri</figcaption></figure>
+    </div>
+    <div class="pair rv"><div class="phone tilt-a"><img src="/assets/img/tr/plan.webp" alt="E-PtAi Planın hazır ekranı: hedef grafiği, program ve günlük kalori" width="560" height="1195" loading="lazy" decoding="async"></div><div class="phone tilt-b"><img src="/assets/img/tr/weekly-review.webp" alt="E-PtAi Haftalık değerlendirme ekranı: gelecek haftanın kalori hedefi" width="560" height="1195" loading="lazy" decoding="async"></div></div>
+  </div>
+</section>
+
+<section class="sec mot" id="motivasyon">
+  <div class="mot-text">
+    <h2 class="rv">Çırak'tan Olimpos'a</h2>
+    <p class="say rv">Her antrenman seni bir adım yukarı taşır.</p>
+    <ol class="ladder rv"><li>Çırak</li><li>Azimli</li><li>Demir Yumruk</li><li>Çelik Bilek</li><li>Granit</li><li>Boğa</li><li>Titan</li><li>Herkül</li><li>Efsane</li><li>Olimpos</li></ol>
+  </div>
+  <div class="fan rv"><div class="phone f1"><img src="/assets/img/tr/badges.webp" alt="E-PtAi Rozetler ekranı ve haftalık seri" width="560" height="1195" loading="lazy" decoding="async"></div><div class="phone f2"><img src="/assets/img/tr/ranks.webp" alt="E-PtAi Güç Skoru ekranı ve rütbeler" width="560" height="1195" loading="lazy" decoding="async"></div><div class="phone f3"><img src="/assets/img/tr/wins.webp" alt="E-PtAi İlerleme ekranı, Başarı sekmesi: toparlanma skoru ve rozetler" width="560" height="1195" loading="lazy" decoding="async"></div></div>
+  <ul class="feats wide rv"><li>Güç Skoru ve 10 rütbe</li><li>24 rozet</li><li>Haftalık seri</li><li>Sabah toparlanma skoru</li></ul>
+  <p class="note rv">Skorlar tahmindir, tıbbi değerlendirme değildir.</p>
+</section>
+
+<section class="sec nut" id="beslenme">
+  <div class="pair rv"><div class="phone tilt-a"><img src="/assets/img/tr/weekly-menu.webp" alt="E-PtAi haftalık menü ekranı: öğünler ve günün toplamı" width="560" height="1195" loading="lazy" decoding="async"></div><div class="phone tilt-b"><img src="/assets/img/tr/recipes.webp" alt="E-PtAi tarifler ekranı: içecek tarifleri" width="560" height="1195" loading="lazy" decoding="async"></div></div>
+  <div>
+    <h2 class="rv">Öğün, tarif, içecek</h2>
+    <p class="say rv">Ne yiyeceğini düşünme. Planın hazır, tarifi yanında.</p>
+    <p class="note rv">Değerler yaklaşık ortalamadır.</p>
+  </div>
+</section>
+
+<section class="sec soc" id="sosyal">
+  <div>
+    <h2 class="rv">Paylaş, kapış, devam et</h2>
+    <p class="say rv">Hikâye kartı, arkadaşlar ve haftalık düello.</p>
+    <p class="note rv">Arkadaşlar ve düello şimdilik önizleme; sunucu açılınca canlı olacak.</p>
+  </div>
+  <div class="pair rv"><div class="phone tilt-a"><img src="/assets/img/tr/share.webp" alt="E-PtAi hikâye paylaşım kartı, örnek antrenman özeti" width="560" height="1195" loading="lazy" decoding="async"></div><div class="phone tilt-b"><img src="/assets/img/tr/friends.webp" alt="E-PtAi Arkadaşlar ekranı: davet kodu ve haftalık düello, örnek isimlerle" width="560" height="1195" loading="lazy" decoding="async"></div></div>
+</section>
+
+<section class="sec ai" id="ai-koc">
+  <div class="glass price rv">
+    <h2>AI Koç</h2>
+    <p class="amount"><span dir="ltr">₺99,99</span><small>/ay</small></p>
+    <p class="amount-y"><span class="or">ya da</span> <span dir="ltr">₺719,99</span><small>/yıl</small></p>
+    <p class="say">Tek abonelik. Deneme yok. Ücretsiz başla, hareket et, gelişimini takip et!</p>
+    <ul class="ticks"><li>Antrenman ve beslenme sorularına genel bilgi</li><li>Planın her hafta yeniden kurulur</li><li>AI Koç üyelerine reklam yok</li></ul>
+    <p class="note">Ödeme yalnız uygulama mağazası üzerinden. Fiyat ülkeye göre değişebilir; satın almadan önce mağazada gösterilir. Yanıtlar genel bilgidir, tıbbi tavsiye değildir.</p>
+  </div>
+  <div class="ai-pic rv">
+    <div class="phone "><img src="/assets/img/tr/ai-ask.webp" alt="E-PtAi AI'ye Sor ekranı: hazır soru başlıkları" width="560" height="1195" loading="lazy" decoding="async"></div>
+    <div class="chars">
+      <figure><img src="/assets/img/lara-ai.webp" alt="Lara Volkova, yapay zekâ ile üretilmiş karakter" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lara <b>AI</b></figcaption></figure>
+      <figure><img src="/assets/img/lukas-ai.webp" alt="Lukas Demirova, yapay zekâ ile üretilmiş karakter" width="176" height="176" loading="lazy" decoding="async"><figcaption dir="ltr">Lukas <b>AI</b></figcaption></figure>
+      <p>Lara ve Lukas, E-PtAi'nin yapay zekâ karakterleridir; gerçek kişi ya da eğitmen değildir.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec faq" id="sss">
+  <div class="faq-side">
+    <h2 class="rv">Sık sorulanlar</h2>
+    <div class="loop rv"><video muted loop playsinline controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback preload="none" width="360" height="360" poster="/assets/img/neon-loop.webp" aria-hidden="true" tabindex="-1"><source src="/assets/img/neon-loop.mp4" type="video/mp4"></video></div>
+  </div>
+  <div class="qa">
+    <details class="rv" open><summary>Ne zaman çıkıyor?</summary><p>Yakında. App Store ve Google Play'e çıktığında bu sayfadaki düğmeler açılacak.</p></details>
+    <details class="rv"><summary>Ücretsiz mi?</summary><p>Ücretsiz başlarsın; yalnız AI Koç ücretlidir. İlk 30 gün reklam yok. Sonrasında ücretsiz üyeler hareket videolarını o gün açmak için günde bir kısa ödüllü video izler ve İlerleme ekranında bir reklam kartı görür. AI özellikleri de kısa bir videoyla o gün için açılabilir. AI Koç üyeleri reklam görmez.</p></details>
+    <details class="rv"><summary>AI Koç ne kadar?</summary><p>₺99,99/ay ya da ₺719,99/yıl. Tek abonelik, deneme yok. Mağaza hesabından iptal edebilirsin.</p></details>
+    <details class="rv"><summary>Tıbbi tavsiye veriyor mu?</summary><p>Hayır. E-PtAi tıbbi bir cihaz değildir; tanı veya tedavi sunmaz. Sağlık sorunun varsa doktoruna danış.</p></details>
+    <details class="rv"><summary>Akıllı saatimle çalışır mı?</summary><p>Akıllı Saat Entegrasyonları İçin Hazırlanıyor.</p></details>
+    <details class="rv"><summary>Bu site veri topluyor mu?</summary><p>Hayır. Bu sitede reklam ya da analiz çerezi yok ve sağlık verisi toplanmaz. Uygulamadaki veriler için Gizlilik Politikası'na bak.</p></details>
+    <details class="rv"><summary>Hangi dillerde?</summary><p>Türkçe, İngilizce, İspanyolca, Rusça ve Arapça.</p></details>
+  </div>
+</section>
 </main>
-<footer>
-  <a href="/gizlilik/">Gizlilik Politikası</a><a href="/kullanim-kosullari/">Kullanım Koşulları</a><a href="/hesap-silme/">Hesap Silme</a><a href="/en/">English</a><br><br>
-  © 2026 Granola Kozmetik Medikal ve Tekstil Sanayi Ticaret Pazarlama Limited Şirketi. E-PtAi, Granola Kozmetik Medikal ve Tekstil Sanayi Ticaret Pazarlama Limited Şirketi'nin markasıdır.
-</footer>
+<footer class="foot">
+  <div class="foot-top">
+    <a class="brand big" href="/" aria-label="E-PtAi"><svg class="mark" width="72" height="72" viewBox="0 0 100 100" aria-hidden="true"><defs><linearGradient id="bm" x1="0" y1=".14" x2="0" y2=".86"><stop offset="0" stop-color="#7FF6FF"/><stop offset=".5" stop-color="#2EE6EA"/><stop offset="1" stop-color="#14B8C4"/></linearGradient></defs><path d="M24.8 84.3A41 41 0 1 1 75.2 84.3" stroke="#2EE6EA" stroke-opacity=".6" stroke-width="3.4" stroke-linecap="round" fill="none"/><circle cx="75.2" cy="84.3" r="3.6" fill="#7FF6FF"/><circle cx="50" cy="21.5" r="7.4" fill="url(#bm)"/><path d="M26 27 50 48M74 27 50 48M50 48V59M50 59 37 81M50 59 63 81" stroke="url(#bm)" stroke-width="8.6" stroke-linecap="round" fill="none"/></svg><span class="word" dir="ltr">E-Pt<span>Ai</span></span></a>
+    <div class="stores">
+      <button type="button" class="store" disabled><span>App Store</span> Yakında</button>
+      <button type="button" class="store" disabled><span>Google Play</span> Yakında</button>
+    </div>
+  </div>
+  <div class="foot-grid">
+    <div><p class="co" lang="tr" dir="ltr">Granola Kozmetik Medikal ve Tekstil Sanayi Ticaret Pazarlama Limited Şirketi</p><p>E-PtAi bu şirketin markasıdır.</p><address lang="tr" dir="ltr">Beşevler Mah. Yıldırım Cad. Yılmaz Apt. Sitesi No: 274/1C, Nilüfer / Bursa, Türkiye</address><p class="ids" lang="tr" dir="ltr">MERSİS 0411111840400001 · Ticaret Sicil 123488 (Bursa) · Çekirge V.D. 4111118404</p></div>
+    <nav aria-label="Yasal"><h2>Yasal</h2><ul><li><a href="/gizlilik/">Gizlilik Politikası</a></li><li><a href="/kullanim-kosullari/">Kullanım Koşulları</a></li><li><a href="/hesap-silme/">Hesap Silme</a></li></ul></nav>
+    <div><h2>İletişim</h2><ul><li><a href="mailto:destek@e-ptai.com" dir="ltr">destek@e-ptai.com</a></li></ul></div>
+  </div>
+  <p class="fine">E-PtAi tıbbi bir cihaz değildir ve tıbbi tavsiye vermez. 18 yaş ve üzeri yetişkinler içindir.</p>
+  <p class="fine">Ekranlar uygulamanın geliştirme sürümünden alındı; içindeki isim ve değerler örnektir.</p>
+  <p class="fine">© 2026 <span lang="tr">Granola Kozmetik Medikal ve Tekstil Sanayi Ticaret Pazarlama Limited Şirketi</span></p>
+</footer></div>
 </body>
 </html>
