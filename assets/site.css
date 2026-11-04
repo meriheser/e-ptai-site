@@ -248,7 +248,7 @@ img,video{-webkit-user-drag:none}
 .js .foot{display:flex;flex-direction:column;justify-content:safe center;padding-top:72px;padding-bottom:84px}
 .js .hero{overflow:hidden auto;padding-bottom:64px}
 @media (max-width:979px){.js .stage{--sh:max(290px,calc(100svh - 430px))}}
-@media (min-width:980px) and (max-height:1000px){.js .cls>*,.js .mot>*,.js .ai>*{zoom:.8}}
+@media (min-width:980px) and (max-height:1000px){.js .cls>*{zoom:.8}}
 .js .bar{position:fixed;background:linear-gradient(var(--bg) 35%,transparent)}
 .js .scrollbar{display:block;animation:none;transform:scaleX(.1);transform-origin:left;transition:transform .35s var(--ease)}
 .js[dir=rtl] .scrollbar{transform-origin:right}
@@ -293,3 +293,23 @@ img,video{-webkit-user-drag:none}
 .pager .pg-auto svg path{fill:none}
 .pager .pg-auto .ic-play{fill:currentColor}
 html.paused .pg-auto .ic-pause,html:not(.paused) .pg-auto .ic-play{display:none}
+
+/* Desktop: phones scale with the window height so nothing is cut and big screens stay filled. */
+@media (min-width:980px){
+  .js .sec{padding-top:60px;padding-bottom:68px}
+  .js .stage{--sh:min(calc(100svh - 150px),1040px)}
+  .js .pair .phone{width:auto;height:min(calc(100dvh - 170px),900px)}
+  .js .clip-phone{width:auto;height:min(calc(100dvh - 170px),820px)}
+  .js .ai-pic>.phone{width:auto;height:min(calc(100dvh - 300px),760px)}
+  .js .cls-pic .phone{width:auto;height:min(calc(100dvh - 240px),820px)}
+}
+.walk .say{max-width:34ch}
+@media (min-width:980px){
+  .js .fan .phone{width:auto;height:min(calc(100dvh - 130px),800px)}
+  .js .mot{align-content:center;row-gap:14px}
+  .js .mot .feats,.js .mot .note{margin-top:0}
+  .js .cls-pic .phone{height:min(calc(100dvh - 400px),640px)}
+  .js .ai-pic>.phone{height:min(calc(100dvh - 340px),700px)}
+}
+@media (min-width:980px) and (max-height:1000px){.js .cls-pic .phone{height:min(calc(100dvh - 250px),640px)}.js .fan .phone{height:calc(100dvh - 240px)}}
+@media (min-width:980px) and (max-height:760px){.js .clip-row{display:none}.js .ai-pic>.phone{height:calc(100dvh - 300px)}.js .ai .ticks{display:none}.js .fan .phone{height:calc(100dvh - 210px)}.js .mot .feats{display:none}}
