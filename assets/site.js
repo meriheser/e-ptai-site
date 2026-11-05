@@ -36,7 +36,7 @@
     raf = 0;
     if (!seen) return;
     var dt = now - t0; t0 = now;
-    if (playing && !hold && !window.__entryOpen && !(heroVid && !heroVid.paused && !heroVid.ended) && !(window.__lesson && window.__lesson.busy())) {
+    if (playing && !hold && !(heroVid && !heroVid.paused && !heroVid.ended) && !(window.__lesson && window.__lesson.busy())) {
       elapsed += Math.min(dt, 100);
       if (elapsed >= STEP) { elapsed = 0; target = Math.round(target) + 1; }
     }
@@ -154,46 +154,6 @@
         v.muted = true; var q = v.play(); if (q) q.catch(function () {}); sync(v);
       });
     }
-    // Entry screen: shown only when the browser refuses the welcome voice (no earlier interaction with the site). One tap anywhere starts the sound; the small link continues muted.
-    // Browsers allow nothing more: sound before the first tap works only where the visitor's own autoplay permission already exists.
-    var ENTRY = {
-      tr: ['Sesli başla', 'Sessiz devam et'], en: ['Start with sound', 'Continue muted'], es: ['Empezar con sonido', 'Continuar sin sonido'],
-      ru: ['Начать со звуком', 'Продолжить без звука'], ar: ['ابدأ بالصوت', 'تابع بدون صوت']
-    };
-    var entryEl = null, entryFrom = null, entryKids = [];
-    function openEntry() {
-      var seenKey = false; try { seenKey = !!sessionStorage.getItem('e-entered'); } catch (e) {}
-      if (entryEl || seenKey || userMuted) return;
-      var t = ENTRY[root.lang] || ENTRY.tr;
-      entryKids = $$('body > *').filter(function (x) { return x.tagName !== 'SCRIPT'; });
-      entryEl = document.createElement('div'); entryEl.className = 'entry';
-      entryEl.setAttribute('role', 'dialog'); entryEl.setAttribute('aria-modal', 'true'); entryEl.setAttribute('aria-label', 'E-PtAi');
-      entryEl.innerHTML = '<span class="entry-logo"><img class="mark" src="/assets/img/logo-mark.svg" width="96" height="96" alt=""><span class="word" dir="ltr">E-Pt<span>Ai</span></span></span>' +
-        '<button type="button" class="entry-go"></button><button type="button" class="entry-mute"></button>';
-      $('.entry-go', entryEl).textContent = t[0]; $('.entry-mute', entryEl).textContent = t[1];
-      document.body.appendChild(entryEl);
-      entryKids.forEach(function (x) { x.inert = true; });
-      window.__entryOpen = true; entryFrom = document.activeElement;
-      $('.entry-go', entryEl).focus({ preventScroll: true });
-      entryEl.addEventListener('click', function (e) { enter(!e.target.closest('.entry-mute')); });
-      entryEl.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') { e.preventDefault(); enter(false); }
-        else if (e.key === 'Tab') { e.preventDefault(); var a = $('.entry-go', entryEl), b = $('.entry-mute', entryEl); (document.activeElement === a ? b : a).focus(); }
-      });
-    }
-    function enter(sound) {
-      if (!entryEl) return;
-      try { sessionStorage.setItem('e-entered', '1'); } catch (e) {}
-      entryKids.forEach(function (x) { x.inert = false; });
-      entryEl.parentNode.removeChild(entryEl); entryEl = null; window.__entryOpen = false;
-      if (entryFrom && entryFrom.focus) try { entryFrom.focus({ preventScroll: true }); } catch (e) {}
-      if (!sound) { userMuted = true; rememberMute(true); welcomeDone = true; vids.forEach(function (v) { v.muted = true; sync(v); }); return; }
-      userMuted = false; rememberMute(false);
-      if (hv && heroOn && WELCOME && !welcomeDone) { hv._user = false; done = true; playWelcome(); return; }
-      var v = vids.filter(function (x) { return !x.paused; })[0] || hv;
-      v._user = false; v.muted = false; v.volume = 1; v.currentTime = 0; done = true;
-      var p = v.play(); if (p) p.catch(function () { v.muted = true; v.play(); done = false; }); sync(v);
-    }
     function hideCap() {}
     function finish() { welcomeDone = true; busy = false; hideCap(); hv._user = false; start(hv, true); }
     function playWelcome() {
@@ -205,7 +165,7 @@
       }
       busy = true; hv.pause(); hv.currentTime = 0; wa.currentTime = 0;
       var p = wa.play();
-      if (p) p.catch(function (e) { if (e && e.name !== 'NotAllowedError') return; busy = false; done = false; hideCap(); start(hv); openEntry(); });   // blocked: the muted video starts and the entry asks for one tap
+      if (p) p.catch(function (e) { if (e && e.name !== 'NotAllowedError') return; busy = false; done = false; hideCap(); start(hv); });   // blocked: the muted video starts, the voice waits for the first touch
       return true;
     }
     vids.forEach(function (v) {
@@ -239,7 +199,7 @@
     });
     // The first touch, click or key: the sound comes on (the welcome voice first on the first page); the click itself is left alone.
     function unlock(e) {
-      if (done || window.__entryOpen || (e.target.closest && e.target.closest('.vctl'))) return;
+      if (done || (e.target.closest && e.target.closest('.vctl'))) return;
       if (hv && heroOn && WELCOME && !welcomeDone) { done = true; playWelcome(); return; }
       var v = vids.filter(function (x) { return !x.paused && x.muted; })[0];
       if (v && !userMuted) { done = true; v.muted = false; v.volume = 1; v.currentTime = 0; var p = v.play(); if (p) p.catch(function () { v.muted = true; v.play(); done = false; }); sync(v); }
@@ -316,7 +276,6 @@
     });
     setInterval(function () {
       if (cur !== seenCur) { seenCur = cur; shownAt = Date.now(); }
-      if (window.__entryOpen) { shownAt = Date.now(); return; }
       if (!playing || document.hidden || cur === panels.length - 1 || Date.now() - userAt < 20000) return;
       var p = panels[cur], tall = p.scrollHeight > p.clientHeight + 2;
       var need = cur === 0 ? 14000 : tall ? 16000 : 9000, held = Date.now() - shownAt;

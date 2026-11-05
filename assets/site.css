@@ -484,14 +484,6 @@ html:not(.js) .ph{position:static;margin:0;width:230px;height:491px}
   .vx:has(>.phone){align-items:center}
 }
 
-/* entry: shown only when the browser refuses sound; one tap anywhere starts it */
-.entry{position:fixed;inset:0;z-index:120;height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(18px,4dvh,36px);padding:24px;background:#000;cursor:pointer;text-align:center}
-.entry-logo{display:inline-flex;align-items:center;gap:.3em;font-size:clamp(2.2rem,1.6rem + 3vw,4rem);font-weight:800;letter-spacing:-.03em;filter:drop-shadow(0 0 24px rgba(var(--cyc),.6))}
-.entry-logo img{width:1.2em;height:1.2em}
-.entry-logo .word{font-size:inherit}
-.entry-go{min-height:64px;min-width:min(86vw,320px);padding:0 36px;border-radius:999px;font-size:1.375rem;font-weight:800;color:var(--on);background:linear-gradient(var(--cy-b),var(--cy),var(--cy-d));box-shadow:0 0 36px rgba(var(--cyc),.45)}
-.entry-mute{min-height:44px;padding:0 16px;font-size:.9375rem;color:var(--soft);text-decoration:underline;text-underline-offset:3px}
-.entry-go:focus-visible,.entry-mute:focus-visible{outline:3px solid #fff;outline-offset:3px}
 
 /* wide screens that are not tall: eight questions must fit under the heading */
 @media (min-width:980px) and (max-height:820px){
@@ -521,4 +513,20 @@ html:not(.js) .ph{position:static;margin:0;width:230px;height:491px}
   .hero-vctl{left:var(--m);right:var(--m);transform:none;bottom:2%;display:flex;justify-content:space-between;pointer-events:none}
   .hero-vctl .vctl{display:contents}
   .hero-vctl button{pointer-events:auto}
+}
+
+/* owner 05.11: the rotating screens as big as the room allows, on every size */
+.ph,.ph.vid{--h:calc(var(--sh)*.97)}
+.ph,.ph.vid{top:calc(var(--sh)*.01)}
+@media (min-width:980px){.stage{--sh:min(calc(100cqh - 30px),1120px)}}
+@media (max-width:979px){
+  :root{--pager:66px}
+  .hero .lead{margin-top:4px;font-size:.9375rem;line-height:1.25;max-width:none}
+  .hero-stage{margin-top:4px}
+  .hero .getapp{margin-top:6px;gap:6px}
+  .getapp .store,.getapp .dl-btn{min-height:50px;padding:4px}
+  .getapp .store{gap:2px;font-size:.75rem}
+  .getapp .store img{width:18px;height:18px}
+  .getapp .dl-btn{font-size:.8125rem}
+  .hero{padding-bottom:8px}
 }
