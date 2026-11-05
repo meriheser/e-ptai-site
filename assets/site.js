@@ -140,8 +140,7 @@
     function sync(v) {
       var c = ctl(v), pl = $('.v-play', c), sn = $('.v-snd', c);
       pl.classList.toggle('on', !v.paused); pl.setAttribute('aria-label', v.paused ? pl.dataset.play : pl.dataset.pause);
-      sn.classList.toggle('on', !v.muted); sn.setAttribute('aria-label', v.muted ? sn.dataset.on : sn.dataset.off);
-      sn.classList.toggle('need', v.muted && !userMuted && !v.paused);
+      sn.classList.toggle('on', !v.muted || !userMuted); sn.setAttribute('aria-label', v.muted ? sn.dataset.on : sn.dataset.off);
     }
     function start(v, fromZero) {
       if (v._user || document.hidden || (v === hv && busy)) return;
@@ -175,8 +174,10 @@
         if (v.paused) { v._user = false; start(v); } else { v._user = true; v.pause(); }
       });
       sn.addEventListener('click', function () {
-        if (busy && v === hv) { wa.pause(); busy = false; welcomeDone = true; hideCap(); }
-        if (v.muted) { userMuted = false; rememberMute(false); v.muted = false; v.volume = 1; if (v.paused) { v._user = false; start(v); } }
+        if (busy && v === hv) { wa.pause(); busy = false; hideCap(); }
+        welcomeDone = true; done = true;
+        if (v.muted && !userMuted) { v.muted = false; v.volume = 1; v.currentTime = 0; var p = v.play(); if (p) p.catch(function () {}); }
+        else if (v.muted) { userMuted = false; rememberMute(false); v.muted = false; v.volume = 1; if (v.paused) { v._user = false; start(v); } }
         else { userMuted = true; rememberMute(true); v.muted = true; }
         vids.forEach(sync);
       });

@@ -515,18 +515,11 @@ html:not(.js) .ph{position:static;margin:0;width:230px;height:491px}
   .hero-vctl button{pointer-events:auto}
 }
 
-/* owner 05.11: the rotating screens as big as the room allows, on every size */
-.ph,.ph.vid{--h:calc(var(--sh)*.97)}
-.ph,.ph.vid{top:calc(var(--sh)*.01)}
-@media (min-width:980px){.stage{--sh:min(calc(100cqh - 30px),1120px)}}
-@media (max-width:979px){
-  :root{--pager:66px}
-  .hero .lead{margin-top:4px;font-size:.9375rem;line-height:1.25;max-width:none}
-  .hero-stage{margin-top:4px}
-  .hero .getapp{margin-top:6px;gap:6px}
-  .getapp .store,.getapp .dl-btn{min-height:50px;padding:4px}
-  .getapp .store{gap:2px;font-size:.75rem}
-  .getapp .store img{width:18px;height:18px}
-  .getapp .dl-btn{font-size:.8125rem}
-  .hero{padding-bottom:8px}
+/* owner 05.11: on wide screens the rotating phones are as big as the room allows, with play and speaker under the phone; phones stay as approved */
+@media (min-width:980px){
+  .hero-stage{align-self:stretch;height:auto;margin-block:-10px -28px}
+  .stage{--sh:min(calc(100cqh - 44px),1120px)}
+  .ph,.ph.vid{--h:calc(var(--sh) - 48px);top:0}
+  .hero-vctl{bottom:0}
+  .ctl-row{margin-top:0}
 }
