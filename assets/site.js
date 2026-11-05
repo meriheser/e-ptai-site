@@ -130,9 +130,9 @@
     var WELCOME = window.__WELCOME !== undefined ? window.__WELCOME : true;
     var vids = lessonVideos, userMuted = false, wa = null, welcomeDone = false, busy = false, heroOn = false;
     var hv = heroVid;
-    // The voice (welcome line and the lesson video's sound) plays once per visit (tab session): after the first spoken round every video is muted.
-    function markVoice() { try { sessionStorage.setItem('e-voice', '1'); } catch (e) {} }
-    try { if (sessionStorage.getItem('e-voice')) { userMuted = true; welcomeDone = true; } } catch (e) {}
+    // Sound is on when the site opens (owner 05.11.2026); only the visitor's own mute is remembered for this tab. Browsers still hold sound back until the first touch or key, which starts it.
+    function rememberMute(on) { try { if (on) sessionStorage.setItem('e-muted', '1'); else sessionStorage.removeItem('e-muted'); } catch (e) {} }
+    try { if (sessionStorage.getItem('e-muted')) { userMuted = true; welcomeDone = true; } } catch (e) {}
     // A spoken round that ends or is cut short (page change) is over: back to muted.
     function hush(v) { if (!v.muted) { userMuted = true; v.muted = true; } }
     window.__lesson = { busy: function () { return busy; }, vids: vids, wa: function () { return wa; } };
@@ -161,7 +161,6 @@
       if (!wa) {
         wa = new Audio('/assets/audio/welcome-' + (root.lang || 'tr') + '.mp3'); wa.preload = 'auto';
         wa.addEventListener('ended', finish);
-        wa.addEventListener('playing', function () { markVoice(); });
         wa.addEventListener('error', function () { welcomeDone = true; busy = false; hideCap(); start(hv, true); });
       }
       busy = true; hv.pause(); hv.currentTime = 0; wa.currentTime = 0;
@@ -177,12 +176,11 @@
       });
       sn.addEventListener('click', function () {
         if (busy && v === hv) { wa.pause(); busy = false; welcomeDone = true; hideCap(); }
-        if (v.muted) { userMuted = false; v.muted = false; v.volume = 1; if (v.paused) { v._user = false; start(v); } }
-        else { userMuted = true; v.muted = true; }
+        if (v.muted) { userMuted = false; rememberMute(false); v.muted = false; v.volume = 1; if (v.paused) { v._user = false; start(v); } }
+        else { userMuted = true; rememberMute(true); v.muted = true; }
         vids.forEach(sync);
       });
       ['play', 'pause', 'ended', 'volumechange'].forEach(function (t) { v.addEventListener(t, function () { sync(v); }); });
-      v.addEventListener('playing', function () { if (!v.muted) markVoice(); });
       // End of a round: sound off for good (until the button is pressed again), then keep going silently like a loop.
       v.addEventListener('ended', function () {
         hush(v); sync(v);
