@@ -226,11 +226,13 @@
   // Download button. Store links live in this one line; empty until the app is published (then the button opens the store for the visitor's system).
   var STORE = { ios: '', android: '', other: '' };
   (function () {
-    var b = $('[data-dl]'), m = $('.dl-msg'); if (!b) return;
-    b.addEventListener('click', function () {
-      var ua = navigator.userAgent, os = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) ? 'ios' : /Android/.test(ua) ? 'android' : 'other';
-      var url = STORE[os] || STORE.other;
-      if (url) window.open(url, '_blank', 'noopener'); else m.hidden = false;
+    var m = $('.dl-msg');
+    $$('[data-dl]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var ua = navigator.userAgent, os = b.dataset.dl || (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) ? 'ios' : /Android/.test(ua) ? 'android' : 'other');
+        var url = STORE[os] || STORE.other;
+        if (url) window.open(url, '_blank', 'noopener'); else m.hidden = false;
+      });
     });
   })();
 
