@@ -1,0 +1,96 @@
+/* E-PtAi site: Spor Hocası and Spor Salonu pages. Same look as the home (site.css tokens, cards, phone frame); these pages scroll down like a normal page. */
+html{scroll-behavior:smooth}
+.pp{min-height:100svh;background:var(--bg)}
+.pp .bar{position:sticky;top:0;background:rgba(var(--bgc),.9);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.pp main{display:block}
+.p-wrap{width:100%;max-width:1180px;margin-inline:auto;padding-inline:var(--m)}
+
+/* page links under the bar */
+.subnav{display:flex;flex-wrap:wrap;gap:6px;max-width:1180px;margin-inline:auto;padding:4px var(--m) 0}
+.subnav a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid rgba(var(--cyc),.2);border-radius:12px;background:var(--card);color:var(--soft);font-size:.9375rem;font-weight:700;text-decoration:none;transition:background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease)}
+.subnav a:hover{color:var(--ink);border-color:rgba(var(--cyc),.5)}
+.subnav a[aria-current]{color:var(--ink);background:rgba(var(--cyc),.18);border-color:var(--cy);box-shadow:0 0 14px rgba(var(--cyc),.45),inset 0 0 10px rgba(var(--cyc),.2)}
+
+/* top of the page */
+.p-hero{padding-block:clamp(28px,5vw,72px) clamp(32px,5vw,64px)}
+.p-hero .p-wrap{display:grid;gap:28px 48px;align-items:center;grid-template-columns:minmax(0,1fr)}
+.eyebrow{display:inline-block;margin-bottom:12px;padding:6px 12px;border:1px solid rgba(var(--cyc),.45);border-radius:12px;background:rgba(var(--cyc),.1);color:var(--cy);font-size:.875rem;font-weight:800}
+.p-hero h1{font-size:clamp(2rem,1.2rem + 3.6vw,3.75rem);max-width:15em}
+.p-hero .lead{margin-top:14px;max-width:46ch;color:var(--soft);font-size:clamp(1rem,.9rem + .4vw,1.2rem);line-height:1.45}
+.p-hero .chips{margin-top:18px}
+.p-hero .chips li{font-size:1rem;padding:10px 14px}
+.p-hero .chips li:first-child{color:var(--cy-b);border-color:var(--cy);box-shadow:0 0 14px rgba(var(--cyc),.45)}
+.p-other{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:16px;color:var(--cy);font-weight:700;text-underline-offset:3px}
+.p-other::after{content:"\2192";font-weight:800}
+[dir=rtl] .p-other::after{content:"\2190"}
+
+.p-vis{position:relative;display:flex;align-items:center;justify-content:center;min-height:340px;overflow:hidden;border-radius:24px}
+.p-vis .mv{position:absolute;inset:0;grid-template-columns:repeat(auto-fill,minmax(86px,1fr));align-content:center;opacity:.5;-webkit-mask-image:radial-gradient(70% 70% at 50% 50%,#000 30%,transparent 100%);mask-image:radial-gradient(70% 70% at 50% 50%,#000 30%,transparent 100%)}
+.p-vis .phone{position:relative;z-index:2;height:min(340px,60vw);width:auto}
+.p-vis figcaption{position:absolute;z-index:3;inset-inline:0;bottom:6px;text-align:center}
+
+.mv{display:grid;gap:6px}
+.mv img{width:100%;border-radius:10px;background:var(--d2)}
+
+/* one block: title on the left, content on the right */
+.p-sec{padding-block:clamp(36px,6vw,84px);border-top:1px solid rgba(var(--cyc),.14)}
+.p-grid{display:grid;gap:20px 56px;grid-template-columns:minmax(0,1fr)}
+.p-grid>*,.p-wrap>*{min-width:0}
+.p-head h2{font-size:clamp(1.6rem,1rem + 2vw,2.6rem)}
+.p-head .say{margin-top:10px;max-width:34ch;color:var(--soft)}
+.p-head .note{margin-top:12px}
+.p-sec .mv{grid-template-columns:repeat(auto-fill,minmax(64px,1fr));margin-top:16px;max-width:560px}
+
+.p-cards{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));align-content:start}
+.p-card{padding:clamp(14px,1.6vw,22px)}
+.p-card::before{content:"";display:block;width:28px;height:3px;margin-bottom:12px;border-radius:2px;background:var(--cy);box-shadow:0 0 10px rgba(var(--cyc),.8)}
+.p-card h3{font-size:1.0625rem}
+.p-card p{margin-top:6px;color:var(--soft);font-size:.9375rem;line-height:1.5}
+.p-sub{grid-column:1/-1;margin-top:12px;font-size:1.0625rem;font-weight:800;color:var(--cy-b)}
+
+.p-steps{counter-reset:s;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.p-steps li{counter-increment:s;padding:clamp(14px,1.6vw,22px)}
+.p-steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;margin-bottom:12px;border-radius:50%;border:1.5px solid var(--cy);background:rgba(var(--cyc),.14);box-shadow:0 0 14px rgba(var(--cyc),.5);color:var(--cy-b);font-weight:800;font-variant-numeric:tabular-nums}
+.p-steps h3{font-size:1.0625rem}
+.p-steps p{margin-top:6px;color:var(--soft);font-size:.9375rem;line-height:1.5}
+
+.p-roles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr))}
+.p-role{padding:clamp(14px,1.6vw,22px)}
+.p-role h3{display:inline-block;padding:4px 12px;border-radius:10px;background:var(--cy);color:var(--on);font-size:.9375rem}
+.p-role p{margin-top:10px;color:var(--soft);font-size:.9375rem;line-height:1.5}
+.p-report{margin-top:12px;padding:clamp(14px,1.6vw,22px)}
+.p-report h3{font-size:1.0625rem;color:var(--cy-b)}
+.p-report p{margin-top:6px;color:var(--soft);font-size:.9375rem;line-height:1.5}
+
+/* price */
+.p-price{padding-block:clamp(36px,6vw,84px);border-top:1px solid rgba(var(--cyc),.14)}
+.p-price .p-wrap{display:grid;gap:20px 56px;grid-template-columns:minmax(0,1fr)}
+.p-price-card{padding:clamp(18px,3vw,36px)}
+.p-price-card h3{font-size:1rem;color:var(--soft)}
+.p-price-card .amount{margin-top:8px}
+.p-price-card .ticks{margin-top:16px;font-size:1rem}
+.p-price-card .note{margin-top:14px}
+
+.p-close{padding-block:clamp(36px,6vw,72px);border-top:1px solid rgba(var(--cyc),.14)}
+.p-close h2{font-size:clamp(1.5rem,1rem + 1.6vw,2.2rem)}
+.p-close p{margin-top:8px;color:var(--soft)}
+.p-close .stores{margin-top:14px}
+.p-close .p-other{display:flex;width:fit-content}
+
+.pp .foot{padding:clamp(28px,4vw,48px) var(--m) 40px;background:#000;border-top:1px solid rgba(var(--cyc),.14)}
+.pp .foot>*{width:100%;max-width:1180px;margin-inline:auto}
+.pp .foot .brand.big .word{font-size:clamp(1.6rem,5vw,2.6rem)}
+
+@media (min-width:900px){
+  .p-hero .p-wrap{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+  .p-vis{min-height:480px}
+  .p-vis .phone{height:min(440px,52vh)}
+  .p-grid{grid-template-columns:minmax(0,4fr) minmax(0,8fr);align-items:start}
+  .p-head{position:sticky;top:84px}
+  .p-price .p-wrap{grid-template-columns:minmax(0,4fr) minmax(0,8fr);align-items:start}
+}
+@media (max-width:520px){
+  .subnav a{padding:0 10px;font-size:.875rem}
+  .p-vis{min-height:300px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

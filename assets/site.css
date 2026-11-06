@@ -523,3 +523,15 @@ html:not(.js) .ph{position:static;margin:0;width:230px;height:491px}
   .hero-vctl{bottom:0}
   .ctl-row{margin-top:0}
 }
+
+
+/* links from the Eğitmen ve Salon page to the two detail pages */
+.more{display:flex;flex-wrap:wrap;gap:8px}
+
+.more a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border:1px solid rgba(var(--cyc),.35);border-radius:12px;background:var(--card);color:var(--cy-b);font-size:.9375rem;font-weight:700;text-decoration:none;transition:box-shadow .25s var(--ease),border-color .2s var(--ease)}
+
+.more a::after{content:"\2192"}
+
+[dir=rtl] .more a::after{content:"\2190"}
+
+.more a:hover{border-color:var(--cy);box-shadow:0 0 14px rgba(var(--cyc),.45)}

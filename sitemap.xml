@@ -46,6 +46,96 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/"/>
   </url>
   <url>
+    <loc>https://www.e-ptai.com/spor-hocalari/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/spor-hocalari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/entrenadores/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/spor-hocalari/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/en/trainers/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/spor-hocalari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/entrenadores/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/spor-hocalari/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/es/entrenadores/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/spor-hocalari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/entrenadores/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/spor-hocalari/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ru/trainers/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/spor-hocalari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/entrenadores/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/spor-hocalari/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ar/trainers/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/spor-hocalari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/entrenadores/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/trainers/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/spor-hocalari/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/spor-salonlari/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/spor-salonlari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/gimnasios/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/spor-salonlari/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/en/gyms/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/spor-salonlari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/gimnasios/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/spor-salonlari/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/es/gimnasios/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/spor-salonlari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/gimnasios/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/spor-salonlari/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ru/gyms/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/spor-salonlari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/gimnasios/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/spor-salonlari/"/>
+  </url>
+  <url>
+    <loc>https://www.e-ptai.com/ar/gyms/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.e-ptai.com/spor-salonlari/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.e-ptai.com/en/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.e-ptai.com/es/gimnasios/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://www.e-ptai.com/ru/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.e-ptai.com/ar/gyms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.e-ptai.com/spor-salonlari/"/>
+  </url>
+  <url>
     <loc>https://www.e-ptai.com/gizlilik/</loc>
   </url>
   <url>
