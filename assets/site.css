@@ -544,3 +544,21 @@ html:not(.js) .ph{position:static;margin:0;width:230px;height:491px}
 .pg:has(.bl) .pg-text{display:flex;flex-direction:column;gap:12px}
 .pg:has(.bl) .pg-vis{order:10}
 @media (min-width:980px){.bl{gap:14px}.bl li{font-size:clamp(1.0625rem,.9rem + .45vw,1.375rem);padding-inline-start:28px}.bl li::before{top:.5em;width:12px;height:12px}.pg:has(.bl) .pg-text{gap:22px}.pg:has(.bl) h2{font-size:clamp(1.75rem,1.2rem + 1.6vw,3rem)}.pg:has(.bl) .chips li{font-size:1rem;padding:10px 16px}}
+
+/* Waitlist page */
+.wl{display:flex;align-items:center;justify-content:center;text-align:center}
+.wl-box{display:flex;flex-direction:column;align-items:center;gap:14px;width:min(100%,520px)}
+.wl-box .say{margin:0}
+.wl-form{display:grid;gap:12px;width:100%;text-align:start}
+.wl-lab{font-weight:700;font-size:.9375rem}
+.wl-in{width:100%;min-height:48px;padding:0 14px;border:1px solid rgba(var(--cyc),.4);border-radius:12px;background:rgba(var(--cyc),.05);color:var(--ink);font:inherit;font-size:1rem}
+.wl-in:focus-visible,.wl-btn:focus-visible,.wl-con input:focus-visible{outline:3px solid var(--cy-b);outline-offset:2px}
+.wl-hp{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.wl-con{display:flex;gap:10px;align-items:flex-start;font-size:.875rem;line-height:1.45;cursor:pointer}
+.wl-con input{flex:none;width:20px;height:20px;margin:1px 0 0;accent-color:var(--cy)}
+.wl-con a,.wl-del a{color:var(--cy);text-decoration:underline}
+.wl-btn{min-height:48px;border:0;border-radius:12px;background:var(--cy);color:#000;font:inherit;font-weight:800;cursor:pointer}
+.wl-btn:disabled{opacity:.6;cursor:progress}
+.wl-msg{margin:0;min-height:1.4em;font-size:.875rem;font-weight:700;color:#ff8f8f}
+.wl-msg.good{color:var(--cy)}
+.wl-del{margin:0;font-size:.75rem;opacity:.75}

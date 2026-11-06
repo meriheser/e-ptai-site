@@ -277,7 +277,8 @@
     });
     setInterval(function () {
       if (cur !== seenCur) { seenCur = cur; shownAt = Date.now(); }
-      if (!playing || document.hidden || cur === panels.length - 1 || Date.now() - userAt < 20000) return;
+      // The waitlist page holds too: the form must not slide away while someone reads or fills it in.
+      if (!playing || document.hidden || cur === panels.length - 1 || panels[cur].querySelector('.wl-form') || Date.now() - userAt < 20000) return;
       var p = panels[cur], tall = p.scrollHeight > p.clientHeight + 2;
       var need = cur === 0 ? 14000 : tall ? 16000 : 9000, held = Date.now() - shownAt;
       var lv = window.__lesson && window.__lesson.vids.filter(function (v) { return p.contains(v) && v.offsetParent; })[0];
