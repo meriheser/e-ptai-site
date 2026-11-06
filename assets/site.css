@@ -535,3 +535,12 @@ html:not(.js) .ph{position:static;margin:0;width:230px;height:491px}
 [dir=rtl] .more a::after{content:"\2190"}
 
 .more a:hover{border-color:var(--cy);box-shadow:0 0 14px rgba(var(--cyc),.45)}
+
+/* trainer and gym pages inside the page flow (owner 07.11.2026): short benefit lines, price chips, one app visual */
+.bl{list-style:none;display:grid;gap:8px;margin:0;padding:0}
+.bl li{position:relative;padding-inline-start:22px;font-size:.9375rem;line-height:1.3}
+.bl li::before{content:"";position:absolute;inset-inline-start:0;top:.4em;width:10px;height:10px;border-radius:50%;background:var(--cy);box-shadow:0 0 8px rgba(var(--cyc),.7)}
+.tl{align-self:flex-start;display:inline-flex;align-items:center;min-height:32px;font-size:.875rem;font-weight:700;color:var(--cy);text-decoration:underline;text-underline-offset:3px}
+.pg:has(.bl) .pg-text{display:flex;flex-direction:column;gap:12px}
+.pg:has(.bl) .pg-vis{order:10}
+@media (min-width:980px){.bl{gap:14px}.bl li{font-size:clamp(1.0625rem,.9rem + .45vw,1.375rem);padding-inline-start:28px}.bl li::before{top:.5em;width:12px;height:12px}.pg:has(.bl) .pg-text{gap:22px}.pg:has(.bl) h2{font-size:clamp(1.75rem,1.2rem + 1.6vw,3rem)}.pg:has(.bl) .chips li{font-size:1rem;padding:10px 16px}}

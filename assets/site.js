@@ -124,10 +124,10 @@
   // One-to-one AI lesson video, in three places (first page, lessons page, AI Coach page).
   // It tries to start with sound; when the browser refuses, it starts muted and the first touch, click or key turns the sound on
   // and restarts it. One video at a time; it stops when its page leaves the screen. Reduced motion: no autoplay.
-  // Welcome voice: set by assets/audio/welcome-<lang>.mp3 (set window.__WELCOME = true, or the constant below, once the files exist).
+  // Welcome voice (off since 07.11.2026): set by assets/audio/welcome-<lang>.mp3 (set window.__WELCOME = true, or the constant below, once the files exist).
   var lessonVideos = $$('video[data-lesson]');
   if (lessonVideos.length) (function () {
-    var WELCOME = window.__WELCOME !== undefined ? window.__WELCOME : true;
+    var WELCOME = window.__WELCOME !== undefined ? window.__WELCOME : false;   // owner 07.11.2026: the lesson video starts at once; the welcome mp3 files stay
     var vids = lessonVideos, userMuted = false, wa = null, welcomeDone = false, busy = false, heroOn = false;
     var hv = heroVid;
     // Sound is on when the site opens (owner 05.11.2026); only the visitor's own mute is remembered for this tab. Browsers still hold sound back until the first touch or key, which starts it.
