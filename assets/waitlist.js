@@ -1,7 +1,7 @@
 // Waitlist form. The key below is Supabase's publishable key: it is meant for browsers and can only call join_waitlist().
 (function () {
-  var URL = 'https://nsviocxatqzjnbelvjvh.supabase.co/rest/v1/rpc/join_waitlist';
-  var KEY = 'sb_publishable_pWoVaYv9kNSAcyG9-_rpVg_zhUPV3i4';
+  var URL = 'https://svmeksnzzshnaxhmgqtg.supabase.co/rest/v1/rpc/join_waitlist';
+  var KEY = 'sb_publishable_brBu2b8aFkDe344gSsJEMw_hEraRfHS';
   var CONSENT_VERSION = 'wl-2026-11';
   var form = document.querySelector('.wl-form');
   if (!form) return;
