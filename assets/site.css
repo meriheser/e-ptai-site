@@ -565,3 +565,6 @@ html:not(.js) .ph{position:static;margin:0;width:230px;height:491px}
 .wl-msg{margin:0;min-height:1.4em;font-size:.875rem;font-weight:700;color:#ff8f8f}
 .wl-msg.good{color:var(--cy)}
 .wl-del{margin:0;font-size:.75rem;opacity:.75}
+.wl-bl{gap:6px;width:100%;text-align:start;font-size:.9375rem}
+.wl-what{margin:0;font-size:.875rem;line-height:1.4;color:var(--soft);text-align:center}
+@media (max-width:979px) and (max-height:760px){.wl-box{gap:8px}.wl-box .say{display:none}.wl-bl{gap:3px;font-size:.8125rem}.wl-what{font-size:.75rem}.wl-form{gap:8px}}
