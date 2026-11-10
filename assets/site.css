@@ -572,6 +572,10 @@ html:not(.js) .ph{position:static;margin:0;width:230px;height:491px}
 /* Waitlist: the one-to-one AI lesson video beside the form (owner 10.11.2026). */
 .wl{gap:clamp(24px,4vw,72px)}
 .wl-box>.say{display:none} /* the video beside it says it */
-.lesson-demo.wl-vid{flex:none;height:min(70dvh,640px);width:calc(min(70dvh,640px) * .5625)}
+.wl-fig{margin:0;flex:none;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lesson-demo.wl-vid{flex:none;height:min(62dvh,600px);width:calc(min(62dvh,600px) * .5625)}
+.wl-cap{max-width:calc(min(62dvh,600px) * .5625 + 90px);font-size:.9375rem;line-height:1.4;color:var(--soft);text-align:center}
 /* Phone: no room for a video above the form, so it sits small beside the list. */
-@media (max-width:979px){.wl{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"h h" "v l" "w w" "f f";align-content:start;column-gap:12px;row-gap:8px}.wl-box{display:contents}.wl-box>h2{grid-area:h}.wl-vid{grid-area:v}.wl-bl{grid-area:l;align-self:center}.wl-what{grid-area:w}.wl-form{grid-area:f}.lesson-demo.wl-vid{--w:min(28vw,130px,17dvh);width:var(--w);height:calc(var(--w) * 16 / 9)}}
+@media (max-width:979px){.wl{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"h h" "v l" "w w" "f f";align-content:start;column-gap:12px;row-gap:8px}.wl-box{display:contents}.wl-box>h2{grid-area:h}.wl-fig{grid-area:v}.wl-cap{display:none}.wl-bl{grid-area:l;align-self:center}.wl-what{grid-area:w}.wl-form{grid-area:f}.lesson-demo.wl-vid{--w:min(28vw,130px,17dvh);width:var(--w);height:calc(var(--w) * 16 / 9)}}
+/* Long languages do not fit one phone screen: this page scrolls on its own. */
+@media (max-width:979px){#haber-ver{overflow-y:auto;overscroll-behavior:contain}}
